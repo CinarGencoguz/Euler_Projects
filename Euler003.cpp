@@ -1,7 +1,10 @@
+//OBJECTIVE
+//What is the largest prime factor of 600851475143 the number ?
+
+
 #include <iostream>
 using namespace std;
-int a1;
-int primenum=0;
+int a1 ,primenum=0;
 long long int num=600851475143;
 
 main()
@@ -12,10 +15,8 @@ main()
         a1=0;
         for (int k = 1; k <= i; k++)
         {
-            if (i%k==0)
-                a1++;            
-            if (a1>2)
-                break;
+            if (i%k==0)  a1++;            
+            if (a1>2)   break;
             if (k==i)
             {
                 prime[primenum]=i;   primenum++;
