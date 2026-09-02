@@ -1,0 +1,40 @@
+    #include <iostream>
+    #include <string>
+    #include <set>
+    using namespace std;
+    string num1;
+
+    string PowofString(const string &num, int PowNum) 
+    {
+        string result = "";
+        int carry = 0;int prod;
+        for (int i = num.size() - 1; i >= 0; i--) 
+        {
+            prod = (num[i] - '0') * PowNum + carry;
+            carry = prod / 10;
+            prod %= 10;
+            result = char(prod + '0') + result;
+        }
+        while (carry > 0) 
+        {
+            result = char(carry % 10 + '0') + result;
+            carry /= 10;
+        }
+        return result;
+    }
+    
+    main() 
+    {
+        set<string> Powers;
+        for (int a = 2; a <= 100; a++) 
+        {
+            for (int b = 2; b <= 100; b++) 
+            {
+                num1 = "1";
+                for (int i = 0; i < b; i++)
+                    num1 = PowofString(num1, a);
+                Powers.insert(num1);
+            }
+        }
+        cout << Powers.size() << endl;
+    }
