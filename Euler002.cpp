@@ -1,16 +1,17 @@
+// OBJECTIVE
+// Find the sum of all even-valued terms in the Fibonacci sequence whose values do not exceed four million (4,000,000).
+
+
 #include <iostream>
 using namespace std;
-int b=1; int a=1;int c;int sum=0;
+int fibo[40]={};
+int sum=0;
 
-main()
+
+int main()
 {
-  while (a < 4000000) 
-  {
-    c = a + b;
-    a = b;
-    b = c;
-    if (a%2==0)
-        sum+=a;
-  }
-    cout << sum;
+  fibo[0]=1;   fibo[1]=2;
+  for (int i = 2; i < 40; ++i)   fibo[i] = fibo[i - 1] + fibo[i - 2]; // fibonacci sequence
+  for (int i = 0; i< 40; i++)   if(fibo[i]%2==0 && fibo[i]<4000000 )  sum+=fibo[i];
+  cout << sum;
 }
