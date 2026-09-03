@@ -12,6 +12,6 @@ int main()
 {
   fibo[0]=1;   fibo[1]=2;
   for (int i = 2; i < 40; ++i)   fibo[i] = fibo[i - 1] + fibo[i - 2]; // fibonacci sequence
-  for (int i = 0; i< 40; i++)   if(fibo[i]%2==0 && fibo[i]<4000000 )  sum+=fibo[i];
+  for (int i = 0; i< 40; i++)   if(fibo[i]%2==0 && fibo[i]<4000000 )  sum+=fibo[i];// Program sum odd and under 4 milion numbers of fibonacci sequence 
   cout << sum;
 }

@@ -8,7 +8,7 @@ using namespace std;
 int Numbers[400]={0};
 int k=1;
 int result=0;
-
+// Program stores number digits as integers and first process each digit individually
 int main()
 {
     Numbers[0]=1;
