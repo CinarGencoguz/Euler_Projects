@@ -21,8 +21,8 @@ int triangle[15][15] = {
     {63, 66,  4, 68, 89, 53, 67, 30, 73, 16, 69, 87, 40, 31},
     { 4, 62, 98, 27, 23,  9, 70, 98, 73, 93, 38, 53, 60,  4, 23}
 };
-int result,num;
-
+// Program works as start at the 13th row and compare the children sum which one is larger, eliminate the lesser one and adds the bigger one to itself 
+// For example 63+4 <? 63+62 and parent chooses 62 and add itself as 125
 int main()
 {
     for (int i = 13; i >=0; i--)
