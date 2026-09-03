@@ -5,7 +5,7 @@
 
 namespace Mathutils
 {
-    inline bool IsPrime(int a)
+    inline bool IsPrime(int a)  
     {
         if(a < 2) return false;     //eliminate number under 2
         if(a == 2 || a == 3 ) return true;      
@@ -16,6 +16,15 @@ namespace Mathutils
             if (a%i==0) return false;
         }
         return true;
+    }
+
+
+        int Factoriel(int a)
+    {
+        if (a<0)  cout << "Enter valid number";
+        if (a==0)   a = 1;
+        for (int i = 1; i <= a; i++)  a *= i;
+        return a;
     }
 
 
