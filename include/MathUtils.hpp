@@ -21,10 +21,11 @@ namespace Mathutils
 
         int Factoriel(int a)
     {
-        if (a<0)  cout << "Enter valid number";
-        if (a==0)   a = 1;
-        for (int i = 1; i <= a; i++)  a *= i;
-        return a;
+       int temp=1;
+        if (a<0)  return 0;
+        if (a==0)   return 1;
+        for (int i = 2; i <= a; i++)   temp *= i;
+        return temp;
     }
 
 
