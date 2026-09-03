@@ -3,36 +3,28 @@
 
 
 #include <iostream>
+#include "../include/MathUtils.hpp"
 using namespace std;
-int a1 ,primenum=0;
+int primeCounter=0;
 long long int num=600851475143;
 
-main()
+int main()
 {
     int prime[25000];
     for (int i = 2; i <= 50000; i++)
     {
-        a1=0;
-        for (int k = 1; k <= i; k++)
+        if (Mathutils:IsPrime(i))
         {
-            if (i%k==0)  a1++;            
-            if (a1>2)   break;
-            if (k==i)
-            {
-                prime[primenum]=i;   primenum++;
-            }
+            primeCounter++;
         }
+        
     }
-    for (int i = 0; i < primenum; i++)
+    for (int i = 0; i < primeCounter; i++)
     {
-        again:if (num%prime[i]==0)
+        while(num%prime[i]==0)
         {
             cout<< prime[i]<<"      " <<num/prime[i]<< endl;
             num/=prime[i];
-            if (num%prime[i]==0)
-            {
-                goto again;
-            }  
         }
     }
 }
