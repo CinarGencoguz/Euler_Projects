@@ -13,7 +13,7 @@ int main()
     int prime[25000];
     for (int i = 2; i <= 50000; i++)
     {
-        if (Mathutils:IsPrime(i))
+        if (Mathutils::IsPrime(i))
         {
             primeCounter++;
         }

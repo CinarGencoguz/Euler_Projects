@@ -4,27 +4,20 @@
 // What is the 10,001st prime number?
 
 #include <iostream>
+#include "../include/MathUtils.hpp"
 using namespace std;
-int a1,primenum,i;
+int primeCounter=0,primeNumber;
 
 int main()
 {
-    i=1;
-  while (primenum<10001)
-  {
-    i++;
-    a1=0;
-        for (int k = 1; k <= i; k++)
+    primeNumber=1;
+    while (primeCounter<10001)
+    {
+        primeNumber++;
+        if (Mathutils::IsPrime(i))
         {
-            if (i%k==0)
-                a1++;            
-            if (a1>2)
-                break;
-            if (k==i)
-                primenum++;
-        }
-  }
-  if (primenum==10001)
-    primenum=i;
-  cout << primenum;
+            primeCounter++;
+        } 
+    }
+  cout << primeNumber;
 }
