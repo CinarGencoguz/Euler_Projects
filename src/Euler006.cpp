@@ -11,19 +11,19 @@
 #include <iostream>
 #include <math.h>
 using namespace std;
-int first ,second,a ;
-
+int sqrSum,sumSqr ; // sqrSum is sum of all square firt 100 natural number           
+                    // sumSqr is square of sum of first 100 natural number
 int main()
 {
-    first= second=a=0;
+    sqrSum= sumSqr=0;
     for (int i = 1; i <= 100; i++)
     { 
-        first+=pow(i,2);
+        sqrSum+=pow(i,2);
     } 
      for (int i = 1; i <= 100; i++)
     { 
-        a+=i;
+        sumSqr+=i;
     } 
-    second=pow(a,2);    
-    cout << second-first;
+    sumSqr=pow(sumSqr,2);    
+    cout << sumSqr-sqrSum;
 }
