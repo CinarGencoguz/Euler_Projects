@@ -1,8 +1,12 @@
+// OBJECTIVE
+// How many different ways can 2 pounds be made using any number of British coins 
+// (1p, 2p, 5p, 10p, 20p, 50p, 1GBP, 2GBP)?
+
 #include <iostream>
 using namespace std;
 int result,sum;
 //1p, 2p, 5p, 10p, 20p, 50p, £1
-main()
+int main()
 {
     result=1;
     for (int i = 0; i <=2; i++)//100

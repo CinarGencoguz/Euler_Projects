@@ -1,10 +1,16 @@
+// OBJECTIVE
+// 2520 is the smallest number that can be divided by each of the numbers 
+// from 1 to 10 without any remainder.
+// What is the smallest positive number that is evenly divisible by all of the 
+// numbers from 1 to 20?
+
 #include <iostream>
 #include <math.h>
 using namespace std;
 int a1 ,a2, primenum,result;
 int prime[20];
 
-main()
+int main()
 {
     primenum=1; result =1;
    for (int i = 2; i <= 20; i++)

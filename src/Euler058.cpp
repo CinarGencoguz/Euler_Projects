@@ -1,3 +1,9 @@
+// OBJECTIVE
+// Starting with 1 and spiralling anticlockwise in the following way, a square spiral with side length 7 is formed.
+// If one adds the ratio of prime numbers along both diagonals, we find that 8/13 ≈ 61.5%.
+// If one continues the spiral, for what side length of the square spiral does the ratio of primes 
+// along the diagonals first fall below 10%?
+
 #include <iostream>
 #include <math.h>
 using namespace std;

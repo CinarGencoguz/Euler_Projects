@@ -1,9 +1,14 @@
+// OBJECTIVE
+// Let d(n) be defined as the sum of proper divisors of n.
+// If d(a) = b and d(b) = a, where a != b, then a and b are an amicable pair.
+// Evaluate the sum of all the amicable numbers under 10000.
+
 #include <iostream>
 using namespace std;
 int dive1,dive2,a,result;
 int nums[1000];
 
-main()
+int main()
 {
     a=result=0;
     for (int i = 28; i < 10000; i++)

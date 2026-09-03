@@ -1,3 +1,7 @@
+// OBJECTIVE
+// By starting at the top of the triangle and moving to adjacent numbers 
+// on the row below, find the maximum total from top to bottom of the 15-row triangle.
+
 #include <iostream>
 using namespace std;
 int triangle[15][15] = {
@@ -19,7 +23,7 @@ int triangle[15][15] = {
 };
 int result,num;
 
-main()
+int main()
 {
     for (int i = 13; i >=0; i--)
     {

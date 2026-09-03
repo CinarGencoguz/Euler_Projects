@@ -1,3 +1,7 @@
+// OBJECTIVE
+// 2^15 = 32768 and the sum of its digits is 3 + 2 + 7 + 6 + 8 = 26.
+// What is the sum of the digits of the number 2^1000?
+
 #include <iostream>
 #include <math.h>
 using namespace std;
@@ -5,7 +9,7 @@ int Numbers[400]={0};
 int k=1;
 int result=0;
 
-main()
+int main()
 {
     Numbers[0]=1;
     for (int t = 0; t < 1000; t++)

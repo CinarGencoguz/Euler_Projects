@@ -1,3 +1,7 @@
+// OBJECTIVE
+// What is the largest 1 to 9 pandigital 9-digit number that can be formed as the 
+// concatenated product of an integer with (1,2, ... , n) where n > 1?
+
 #include <iostream>
 #include <set>
 #include <string>
@@ -20,7 +24,7 @@ bool IsPandigital(int a)
     return true;
 }
 
-main()
+int main()
 {   
     result=0;
     for (size_t i = 9000; i < 9500; i++)

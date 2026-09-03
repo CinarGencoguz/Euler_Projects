@@ -1,3 +1,8 @@
+// OBJECTIVE
+// Using names.txt, sort it into alphabetical order. Calculate the alphabetical 
+// value for each name, then multiply by its alphabetical position to get a name score.
+// What is the total of all the name scores in the file?
+
 #include <iostream>
 #include <fstream>
 #include <sstream>
@@ -9,7 +14,7 @@ int n ,result;
 string line,temp;
 char alphabet[26] = {'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'};
 
-main() 
+int main() 
 {
     result=n=0;
     ifstream file("0022_names.txt");

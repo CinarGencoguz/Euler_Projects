@@ -1,3 +1,7 @@
+// OBJECTIVE
+// There are values of nCr, for 1 <= n <= 100, which are greater than one million.
+// How many, not necessarily distinct, values of nCr for 1 <= n <= 100, are greater than one million?
+
 #include <iostream>
 using namespace std;
 int result;
@@ -29,7 +33,7 @@ bool combination(int top,int bot)
     return false;  
 }
 
-main()
+int main()
 {
     for (int i = 10; i < 101; i++)
         for (int k = 2; k <= i-2; k++) 

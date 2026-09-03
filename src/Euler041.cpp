@@ -1,3 +1,6 @@
+// OBJECTIVE
+// What is the largest n-digit pandigital prime that exists?
+
 #include <iostream>
 #include <math.h>
 #include <algorithm>
@@ -18,7 +21,7 @@ bool IsPrime(int a)
     return true;
 }
 
-main()
+int main()
 {
     n=7;result=0;
     do

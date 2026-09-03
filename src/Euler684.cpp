@@ -1,3 +1,9 @@
+// OBJECTIVE
+// Define s(n) to be the smallest number that has a digit sum of n.
+// S(N) is the sum of s(n) for 1 <= n <= N.
+// Calculate the sum of S(f_i) for 2 <= i <= 90, where f_i is the i-th Fibonacci number. 
+// Give your answer modulo 1000000007.
+
 #include <iostream>
 using namespace std;
 

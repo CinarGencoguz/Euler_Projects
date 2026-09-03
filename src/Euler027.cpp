@@ -1,3 +1,6 @@
+// OBJECTIVE
+// Considering quadratics of the form n^2 + an + b (|a| < 1000, |b| <= 1000), find the product of the coefficients a and b that produces the maximum number of primes for consecutive values of n, starting with n = 0.
+
 #include <iostream>
 int PrimeD, num1;
 int a, b, n , maxn;

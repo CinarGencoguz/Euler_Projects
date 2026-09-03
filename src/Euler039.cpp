@@ -1,10 +1,14 @@
+// OBJECTIVE
+// If p is the perimeter of a right angle triangle with integral side lengths, {a,b,c}, 
+// for which value of p <= 1000, is the number of solutions maximised?
+
 #include <iostream>
 #include <math.h>
 using namespace std;
 int maxleng, leng;
 double a,result;
 
-main()
+int main()
 {
     for (int i = 2; i < 1000; i++)
     {

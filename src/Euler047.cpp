@@ -1,3 +1,7 @@
+// OBJECTIVE
+// Find the first four consecutive integers to have four distinct prime factors each. 
+// What is the first of these numbers?
+
 #include <iostream>
 #include <math.h>
 #include <set>
@@ -38,7 +42,7 @@ int PrimeCounter(int a)
     return big.size();
 }
 
-main()
+int main()
 {
     primenum=1;Primes[0]=2;mainnum=1001;
     for (int i = 3; i < 150000; i++)

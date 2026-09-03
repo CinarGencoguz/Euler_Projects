@@ -1,3 +1,8 @@
+// OBJECTIVE
+// A number n is called abundant if the sum of its proper divisors exceeds n.
+// Find the sum of all positive integers which cannot be written as the sum of 
+// two abundant numbers (all integers > 28123 can be written as such a sum).
+
 #include <iostream>
 using namespace std;
 int a, b, c,d,g,f;

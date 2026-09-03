@@ -1,3 +1,8 @@
+// OBJECTIVE
+// The 4-digit part (1487, 4817, 8147) forms an arithmetic sequence of prime numbers 
+// where each term is a permutation of the others.
+// What 12-digit number do you form by concatenating the three terms in the other 4-digit sequence?
+
 #include <iostream>
 #include <math.h>
 using namespace std;
@@ -23,7 +28,7 @@ int Sum(int a)
     return sum;
 }
 
-main()
+int main()
 {
     for (int i = 1001; i < 3400; i+=2)
     {

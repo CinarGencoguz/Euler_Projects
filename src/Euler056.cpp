@@ -1,3 +1,9 @@
+// OBJECTIVE
+// A googol (10^100) is a massive number: one followed by one hundred zeros; 
+// 100^100 is infinitely bigger, with 1 followed by two hundred zeros. 
+// Considering natural numbers of the form, a^b, where a, b < 100, 
+// what is the maximum digital sum?
+
 #include <iostream>
 #include <string>
 using namespace std;
@@ -26,7 +32,7 @@ int finddigitsum(int i, int k)
     return sum;
 }
 
-main()
+int main()
 {
     result=0;
     for (int i = 2; i < 100; i++)

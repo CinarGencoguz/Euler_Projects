@@ -1,3 +1,8 @@
+// OBJECTIVE
+// The n-th term of the sequence of triangle numbers is given by, t_n = ½n(n+1).
+// Using words.txt, a 16K text file containing nearly two-thousand common English words, 
+// how many are triangle words?
+
 #include <iostream>
 #include <fstream>
 #include <sstream>
@@ -16,7 +21,7 @@ bool isTriangle(long long x)
     long long root = (long long)(sqrt(s) + 0.5);
     return root*root == s;
 }
-main() 
+int vmain() 
 {
     result=n=0;
     ifstream file("0042_words.txt");

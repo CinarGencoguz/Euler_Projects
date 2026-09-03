@@ -1,3 +1,7 @@
+// OBJECTIVE
+// p(L, n) is defined as the nth positive integer j such that 2^j starts with the decimal digits of L.
+// Find p(123, 678910).
+
 #include <iostream>
 #include <math.h>
 using namespace std;

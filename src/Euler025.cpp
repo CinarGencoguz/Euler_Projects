@@ -1,3 +1,8 @@
+// OBJECTIVE
+// The Fibonacci sequence is defined by F1 = 1, F2 = 1, Fn = Fn-1 + Fn-2.
+// The 12th term, F12 = 144, is the first term to contain three digits.
+// What is the index of the first term in the Fibonacci sequence to contain 1000 digits?
+
 #include <iostream>
 using namespace std;
 int num1[1002]={0},num2[1002]={0};

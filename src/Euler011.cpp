@@ -1,3 +1,7 @@
+// OBJECTIVE
+// What is the greatest product of four adjacent numbers in the same 
+// direction (up, down, left, right, or diagonally) in the 20x20 grid?
+
 #include <iostream>
 #include <vector>
 using namespace std;
@@ -27,6 +31,7 @@ int nums[20][20]=
 };
 
 
+int 
 main()
 {
     result=0;

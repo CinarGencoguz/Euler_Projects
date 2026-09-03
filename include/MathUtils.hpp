@@ -23,4 +23,4 @@ namespace Mathutils
 
 
 
-#endif // MATH_UTILS_HPP
+#endif // MATH_UTILS_HPP+

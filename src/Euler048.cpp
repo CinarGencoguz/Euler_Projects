@@ -1,10 +1,13 @@
+// OBJECTIVE
+// Find the last ten digits of the series, 1^1 + 2^2 + 3^3 + ... + 1000^1000.
+
 #include <iostream>
 using namespace std;
 int digit[3000]={0};
 int Tdigit[3000]={0};
 int g;
 
-main()
+int main()
 {
     Tdigit[0]=g=1;
     for (int i = 1; i <= 1000; i++)

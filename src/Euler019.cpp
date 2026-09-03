@@ -1,3 +1,8 @@
+// OBJECTIVE
+// How many Sundays fell on the first of the month during the twentieth 
+// century (1 Jan 1901 to 31 Dec 2000)?
+// Given: 1 Jan 1900 was a Monday.
+
 #include <iostream>
 using namespace std;
 int day = 2;

@@ -1,3 +1,6 @@
+// OBJECTIVE
+// Find the sum of all 0 to 9 pandigital numbers with sub-string divisibility properties.
+
 #include <iostream>
 #include <algorithm>
 #include <string>
@@ -7,7 +10,7 @@ int n;long long int result,a;
 string s;
 
 
-main()
+int main()
 {
     result=0; n=10;
     do {

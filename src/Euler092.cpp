@@ -1,3 +1,9 @@
+// OBJECTIVE
+// A number chain is created by continuously adding the square of the digits in a number 
+// to form a new number until it has been seen before.
+// Every number that arrives at 1 or 89 will become stuck in an endless loop.
+// How many starting numbers below ten million will arrive at 89?
+
 #include <iostream>
 #include <math.h>
 using namespace std;

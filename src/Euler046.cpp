@@ -1,3 +1,6 @@
+// OBJECTIVE
+// What is the smallest odd composite that cannot be written as the sum of a prime and twice a square?
+
 #include <iostream>
 #include <math.h>
 using namespace std;
@@ -17,7 +20,7 @@ bool IsPrime(int a)
     return true;
 }
 
-main()
+int main()
 {
     num1=9;
     again:for (int i = 1; i*i*2 < num1; i++)

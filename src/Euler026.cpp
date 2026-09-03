@@ -1,3 +1,6 @@
+// OBJECTIVE
+// Find the value of d < 1000 for which 1/d contains the longest recurring cycle in its decimal fraction part.
+
 #include <iostream>
 #include <math.h>
 using namespace std;
@@ -15,7 +18,7 @@ void dived(unsigned long long int& a)
     }
 }
 
-main()
+int main()
 {
     for (int i = 2; i < 1000; i++)
     {

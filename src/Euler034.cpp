@@ -1,3 +1,7 @@
+// OBJECTIVE
+// Find the sum of all numbers which are equal to the sum of the factorial of their digits 
+// (excluding 1! and 2!).
+
 #include <iostream>
 using namespace std;
 int number[10000];
@@ -12,7 +16,7 @@ int Fact(int& a, int& b)
     return b;
 }
 
-main()
+int main()
 {
     num2=result=0;
     for (int i = 145; i < 100000; i++)

@@ -1,3 +1,6 @@
+// OBJECTIVE
+// How many circular primes (all rotations of the digits are prime) are there below one million?
+
 #include <iostream>
 using namespace std;
 int trash,trash2;

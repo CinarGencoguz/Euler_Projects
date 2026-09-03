@@ -1,3 +1,6 @@
+// OBJECTIVE
+// Find the sum of all the numbers that can be written as the sum of fifth powers of their digits.
+
 #include <iostream>
 #include <set>
 #include <math.h>
@@ -5,6 +8,7 @@ using namespace std;
 int total,num1,num2,result;
 int  powers[1000];
 
+int 
 main()
 {
     num2=0;result=0;

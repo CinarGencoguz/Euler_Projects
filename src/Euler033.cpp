@@ -1,3 +1,7 @@
+// OBJECTIVE
+// Discover the four 2-digit fractions that are non-trivial examples of cancelling digits erroneously, 
+// with value less than 1, and find the value of their denominator in lowest terms.
+
 #include <iostream>
 #include <math.h>
 using namespace std;
@@ -17,7 +21,7 @@ bool IsPrime(int a)
     return true;
 }
 
-main()
+int main()
 {//i/k==(i/10)/(k%10)      i/k==(k/10)/(i%10)
     denominator=numerator=1;
     for (int i = 10; i < 100; i++)

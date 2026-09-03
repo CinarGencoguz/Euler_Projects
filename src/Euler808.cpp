@@ -1,3 +1,8 @@
+// OBJECTIVE
+// A reversible prime square is a square of a prime number that is not a palindrome, 
+// whose reverse is also the square of a prime number.
+// Find the sum of the first 50 reversible prime squares.
+
 #include <iostream>
 #include <math.h>
 #include <string>

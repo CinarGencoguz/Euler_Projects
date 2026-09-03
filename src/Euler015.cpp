@@ -1,3 +1,8 @@
+// OBJECTIVE
+// Starting in the top left corner of a 2x2 grid, and only being able to move 
+// to the right and down, there are exactly 6 routes to the bottom right corner.
+// How many such routes are there through a 20x20 grid?
+
 #include <iostream>
 #include <math.h>
 using namespace std;
@@ -5,7 +10,7 @@ int num1[20],num2[20],primenum[8];
 int prime[9]={2,3,5,7,11,13,17,19};
 long long int product;
 
-main()
+int main()
 {
     for (int i = 0; i < 20; i++)
     {

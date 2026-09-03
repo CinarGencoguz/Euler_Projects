@@ -1,3 +1,9 @@
+// OBJECTIVE
+// A number n is called a 2-split square if its square can be split into two non-empty numbers 
+// a and b such that n = a + b (e.g., 81^2 = 6561, 65 + 61 = 126 != 81; but 9^2 = 81 -> no split; 
+// 3025 = 55^2, 30 + 25 = 55).
+// Find the sum of all 2-split squares up to a given bound.
+
 #include <iostream>
 #include <math.h>
 using namespace std;

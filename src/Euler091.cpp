@@ -1,3 +1,9 @@
+// OBJECTIVE
+// The points P(x1, y1) and Q(x2, y2) are plotted at integer coordinates (x1, y1) and (x2, y2) 
+// such that 0 <= x1, y1, x2, y2 <= N.
+// Given that 0 <= x1, y1, x2, y2 <= 50, how many right-angled triangles can be formed 
+// with one vertex at the origin O(0,0)?
+
 #include <iostream>
 #include <set>
 using namespace std;

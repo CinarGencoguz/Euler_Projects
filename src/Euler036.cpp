@@ -1,3 +1,6 @@
+// OBJECTIVE
+// Find the sum of all numbers, less than one million, which are palindromic in base 10 and base 2.
+
 #include <iostream>
 #include <string>
 #include <bitset>
@@ -20,7 +23,7 @@ bool IsPalidrom(string s)
 
 
 
-main()
+int main()
 {
    result=0;
     for (int i = 1; i < 1000000; i++)

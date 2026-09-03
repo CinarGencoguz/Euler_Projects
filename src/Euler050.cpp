@@ -1,3 +1,6 @@
+// OBJECTIVE
+// Which prime, below one million, can be written as the sum of the most consecutive primes?
+
 #include <iostream>
 #include <math.h>
 using namespace std;
@@ -13,7 +16,7 @@ bool isPrime(int n)
     return true;
 }
 
-main()
+int main()
 {
     prime[0]=2;primenum=1;maxleng=result=0;
     for (int i = 3; i <= 100000; i+=2)

@@ -1,3 +1,6 @@
+// OBJECTIVE
+// Find the sum of the only eleven primes that are both truncatable from left to right and right to left.
+
 #include <iostream>
 #include <math.h>
 #include <string>
@@ -19,7 +22,7 @@ bool IsPrime(int a)
     return true;
 }
 
-main()
+int main()
 {
     counter=result=0;num1=11;
     while (counter!=11)

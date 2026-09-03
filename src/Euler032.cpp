@@ -1,3 +1,7 @@
+// OBJECTIVE
+// Find the sum of all products whose multiplicand/multiplier/product identity 
+// can be written as a 1 through 9 pandigital.
+
 #include <iostream>
 using namespace std;
 int num1[3], num1a, num2[4], num2a,num3[4],num3a;

@@ -1,3 +1,7 @@
+// OBJECTIVE
+// Work out the first ten digits of the sum of the one-hundred 50-digit numbers.
+
+
 #include <iostream>
 using namespace std;
 string numbers[100] = {
@@ -104,7 +108,7 @@ string numbers[100] = {
 };
 int nums[52];
 
-main()
+int main()
 {
     for (int i = 49; i >=0; i--)
     {
