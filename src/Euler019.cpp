@@ -8,7 +8,7 @@ using namespace std;
 int day = 2; //1 Jan 1901 is Tuesday
 int result = 0;
 int month[12] = {31,28,31,30,31,30,31,31,30,31,30,31};
-//day numberization start with as 0=sunday
+//day numberization start with as 0 is Sunday
 int main() 
 {
     for (int year = 1901; year <= 2000; year++) 

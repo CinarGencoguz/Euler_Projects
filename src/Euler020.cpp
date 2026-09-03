@@ -5,7 +5,7 @@
 
 #include <iostream>
 using namespace std;
-
+// Program stores number digits as integers and first process each digit individually
 int Numbers[10000],k,result;
 
 int main()
