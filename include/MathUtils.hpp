@@ -19,7 +19,7 @@ namespace Mathutils
     }
 
 
-        int Factoriel(int a)
+    inline int Factoriel(int a)
     {
        int temp=1;
         if (a<0)  return 0;
@@ -27,6 +27,19 @@ namespace Mathutils
         for (int i = 2; i <= a; i++)   temp *= i;
         return temp;
     }
+
+    bool IsPalindromString(string s) // Checks if a string reads the same forward and backward
+{
+    int left,right;
+    left=0,r=s.size()-1;
+    while (left<right)
+    {
+        if (s[left]!=s[right])
+            return false;
+        left++;right--;
+    }
+    return true;
+}
 
 
 }
