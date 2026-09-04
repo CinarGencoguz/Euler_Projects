@@ -15,6 +15,7 @@ int main()
     {
         if (Mathutils::IsPrime(i))
         {
+            prime[primeCounter]=i;
             primeCounter++;
         }
         

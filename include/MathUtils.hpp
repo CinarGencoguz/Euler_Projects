@@ -1,6 +1,10 @@
-#include <math.h>
 #ifndef MATH_UTILS_HPP
 #define MATH_UTILS_HPP
+
+#include <math.h>
+#include <string>
+#include <iostream>
+using namespace std;
 
 
 namespace Mathutils
@@ -31,7 +35,7 @@ namespace Mathutils
     bool IsPalindromString(string s) // Checks if a string reads the same forward and backward
 {
     int left,right;
-    left=0,r=s.size()-1;
+    left=0,right=s.size()-1;
     while (left<right)
     {
         if (s[left]!=s[right])
