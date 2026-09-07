@@ -2,8 +2,7 @@
 #ifndef MATH_UTILS_HPP
 #define MATH_UTILS_HPP
 
-
-namespace Mathutils
+namespace Mathutilus
 {
     inline bool IsPrime(int a)  
     {
@@ -31,7 +30,7 @@ namespace Mathutils
     bool IsPalindromString(string s) // Checks if a string reads the same forward and backward
 {
     int left,right;
-    left=0,r=s.size()-1;
+    left=0,right=s.size()-1;
     while (left<right)
     {
         if (s[left]!=s[right])
