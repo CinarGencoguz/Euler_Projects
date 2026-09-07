@@ -106,29 +106,17 @@ string numbers[100] = {
 "20849603980134001723930671666823555245252804609722",
 "53503534226472524250874054075591789781264330331690"
 };
-int nums[52];
+int nums[53];
 
 int main()
 {
-    for (int i = 49; i >=0; i--)
+    
+    nums[0]=nums[1]=nums[2]=0;
+    for (int i = 49; i >=0; i--)    for (int k = 99; k >=0; k--)    nums[i+3]+=numbers[k][i] - '0'; //converts character to integer ,sum and stores in an array
+    for (int i = 52; i >0; i--) 
     {
-        for (int k = 99; k >=0; k--)
-        {
-            nums[i]+=numbers[k][i] - '0';
-        }
+        nums[i-1]+=nums[i]/10; // adds carry to left digit
+        nums[i]=nums[i]%10; // reduce to digit between 0 and 9
     }
-    for (int i = 51; i >1; i--)
-    {
-        nums[i]=nums[i-2];
-    }
-    nums[0]=nums[1]=0;
-    for (int i = 51; i >0; i--)
-    {
-        nums[i-1]+=nums[i]/10;
-        nums[i]=nums[i]%10;
-    }
-    for (int t = 0; t < 10; t++)
-    {
-        cout<< nums[t];
-    }
+    for (int t = 0; t < 10; t++)     cout<< nums[t];
 }
