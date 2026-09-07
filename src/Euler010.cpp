@@ -4,26 +4,18 @@
 
 #include <iostream>
 #include <math.h>
+#include "../include/MathUtils.hpp"
 using namespace std;
-int  total;
-bool IsPrime;
+int  result;
 
 int main()
 {
-    long long total=2;
-    for (int i = 3; i <= 2000000; i+=2)
+    for (int i = 1; i <= 2000000; i++)
     {
-        IsPrime= true;
-        for (int k = 2; k <= pow(i,0.5)+1; k++)
+         if (Mathutils::IsPrime(i))
         {
-            if (i%k==0)
-            {
-                IsPrime= false;
-                break; 
-            }
+            result+=i;
         }
-         if (IsPrime)
-              total+=i;
     }
-    cout << total;
+    cout << result;
 }
