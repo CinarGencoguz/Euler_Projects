@@ -3,38 +3,29 @@
 
 #include <iostream>
 #include <math.h>
+#include "../include/MathUtils.hpp"
 using namespace std;
-int num1,result;
-bool finish;
-
-bool IsPrime(int a)
-{
-    if(a < 2) return false;
-    if(a == 2) return true;
-    if(a % 2 == 0) return false;
-    for (size_t i = 3; i <= sqrt(a)+1; i++)
-    {
-        if (a%i==0)
-            return false;
-    }
-    return true;
-}
+int num,result;
+bool found;
 
 int main()
 {
-    num1=9;
-    again:for (int i = 1; i*i*2 < num1; i++)
+    num=9;
+    while (true)
     {
-        if (IsPrime(num1)==true)
+        found=true;
+        if (Mathutilus::IsPrime(num)) {num+=2; continue;} // we need composite number. That function check number is prime or not
+        for (size_t i = 1; i*i*2 < num; i++)    
         {
-            num1+=2; goto again;
-        }
-        if (IsPrime(num1-2*i*i))
-        {
-            num1+=2; goto again;
-        }
+            if (Mathutilus::IsPrime(num-(i*i*2))) // we need to decrease the number 2*i^2 and check new number is prime or not 
+            {                                     // beside that threshold kept between 1 and i*i*2<num because if max output is higher than our number , new number will be negative 
+                num+=2;                           // that will be unnecessary action and increase our execution time
+                found=false; 
+                break;
+            }
+        }   
+        if (found)   {result= num ;  break;}
     }
-    result=num1;
     cout << result;
 }
 

@@ -11,9 +11,9 @@ unsigned long long int result,mod;
 int main()
 {
     result=1;mod=10000000000;
-    for (int i = 0; i < 7830457; i++)   
+    for (int i = 0; i < 7830457; i++)   // in modulus arithmetic , we can multiply and take mod over and over 
     {
-        result*=2; result%=mod;
+        result*=2; result%=mod;         // this function prevents overflow and find mod as mathematically correct
     }
     result*=28433;result%=mod;result+=1;
     cout <<result;
