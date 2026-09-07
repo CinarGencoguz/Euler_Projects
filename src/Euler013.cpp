@@ -112,7 +112,7 @@ int main()
 {
     
     nums[0]=nums[1]=nums[2]=0;
-    for (int i = 49; i >=0; i--)    for (int k = 99; k >=0; k--)    nums[i+3]+=numbers[k][i] - '0'; //converts character to integer ,sum and stores in an array
+    for (int i = 49; i >=0; i--)    for (int k = 99; k >=0; k--)    nums[i+3]+=numbers[k][i] - '0'; //converts character to integer ,sums and stores in an array
     for (int i = 52; i >0; i--) 
     {
         nums[i-1]+=nums[i]/10; // adds carry to left digit
