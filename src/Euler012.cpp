@@ -5,55 +5,35 @@
 // What is the value of the first triangle number to have over five hundred divisors?
 
 #include <iostream>
+#include <math.h>
+#include "../include/MathUtils.hpp"
+
 using namespace std;
-int num,num1,dive,result,a1,t;
-int prime[1000],primenum;
-bool able=true;
+int counter=50,result=0,temp,dividerCounter,nOD; //nOD is number of dividers
+int prime[750],primeCounter=0;
 
 int main()
 {
-    for (int i = 2; i <= 3000; i++)
+    for (size_t i = 2; i <= 3000; i++) //finds prime numbers
     {
-        a1=0;
-        for (int k = 1; k <= i; k++)
+        if (Mathutils::IsPrime(i)) 
         {
-            if (i%k==0)
-                a1++;            
-            if (a1>2)
-                break;
-            if (k==i)
-            {
-                prime[primenum]=i;   primenum++;
-            }
+            prime[primeCounter]=i;
+            primeCounter++;
         }
     }
-    num=50;
-while (able)
-{
-   num++; num1=0;
-    for (int i = 1; i <= num; i++)
+    for (size_t i = 1; i < 50; i++) result+=i; //for lesser execution time we start at 50 
+    while (true)
     {
-       num1+=i;
+        result+=counter; temp=result; nOD=1;
+        for (size_t i = 0; i < primeCounter; i++)
+        {
+            dividerCounter=0;
+            while(temp%prime[i]==0) {temp/=prime[i]; dividerCounter++;} // Finds prime factors powers to use factor formula based on prime powers
+            nOD*=dividerCounter+1;
+        }
+        if (nOD>500) break;
+        counter++;
     }
-    dive=1; result=num1;
-    for (int k = 0; k < primenum; k++)
-    {
-        if (num1==1)
-            break;
-        t=1;
-       again:if (num1%prime[k]==0)
-       {
-        num1/=prime[k];
-        t++;
-        goto again;
-       }
-       dive*=t;
-       if (dive>=500)
-       {
-        able = false;
-        break;
-       }
-    }
-}
 cout << result;
 }

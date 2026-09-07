@@ -4,7 +4,7 @@
 
 #include <iostream>
 using namespace std;
-int total,result,temp1,temp2;
+int total,result=0,temp1,temp2,temp3,temp4;
 int nums[20][20]=
 {
     { 8, 2,22,97,38,15, 0,40, 0,75, 4, 5, 7,78,52,12,50,77,91, 8},
@@ -33,30 +33,16 @@ int nums[20][20]=
 int 
 main()
 {
-    result=0;
-    for (int i = 0; i < 17; i++)
+    for (int i = 0; i < 17; i++) //Keeps bounds between 0 and 16 to prevent array index out-of-bounds errors
     {
-        for (int k = 0; k < 20; k++)
+        for (int k = 0; k < 17; k++)
         {
-            temp1=nums[i][k]*nums[i+1][k]*nums[i+2][k]*nums[i+3][k];
-            temp2=nums[i][k]*nums[i][k+1]*nums[i][k+2]*nums[i][k+3];
-            total=max(temp1,temp2);
+            temp1=nums[i][k]*nums[i+1][k]*nums[i+2][k]*nums[i+3][k];//Vertical
+            temp2=nums[i][k]*nums[i][k+1]*nums[i][k+2]*nums[i][k+3];//Horizontal
+            temp3=nums[k][i]*nums[k+1][i+1]*nums[k+2][i+2]*nums[k+3][i+3];//Diagonal left corner to right corner
+            temp4=nums[k][i+3]*nums[k+1][i+2]*nums[k+2][i+1]*nums[k+3][i];//Diagonal Right corner to left corner
+            total=max(temp1,max(temp2,max(temp3,temp4)));//Compare the total for highest one
             if (total >result)  result=total;
-        }
-    }
-    cout << endl;
-     for (int i = 0; i < 16; i++)
-    {
-        for (int k = 0; k < 16; k++)
-        {
-            temp1=nums[k][i]*nums[k+1][i+1]*nums[k+2][i+2]*nums[k+3][i+3];
-            temp2=nums[k][i+3]*nums[k+1][i+2]*nums[k+2][i+1]*nums[k+3][i];
-            total=max(temp1,temp2);
-            if (total >result)
-            {
-                result=total;
-                cout << nums[k][i] << "     "<< nums[k+1][i+1] << "    "<< nums[k+2][i+2] << "    "<< nums[k+3][i+3] << "    " << result<< endl;
-            }
         }
     }
     cout << result;

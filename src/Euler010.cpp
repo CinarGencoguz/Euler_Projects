@@ -6,16 +6,10 @@
 #include <math.h>
 #include "../include/MathUtils.hpp"
 using namespace std;
-int  result;
+long long int  result;
 
 int main()
 {
-    for (int i = 1; i <= 2000000; i++)
-    {
-         if (Mathutils::IsPrime(i))
-        {
-            result+=i;
-        }
-    }
+    for (int i = 1; i <= 2000000; i++)  if (Mathutils::IsPrime(i))  result+=i;
     cout << result;
 }
