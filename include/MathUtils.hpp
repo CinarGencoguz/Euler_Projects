@@ -6,8 +6,7 @@
 #include <iostream>
 using namespace std;
 
-
-namespace Mathutils
+namespace Mathutilus
 {
     inline bool IsPrime(int a)  
     {

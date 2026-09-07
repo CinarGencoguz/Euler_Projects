@@ -7,28 +7,21 @@
 
 #include <iostream>
 using namespace std;
-int total,result,num;
-long long unsigned int trash;
+int counter,result,num;
+long long  int temp; // selected long long int to prevent overflow
 
 int main()
 {
-    for (int i = 1; i < 1000000; i++)
-    {
-        total=0; trash=i;
-        while (trash!=1)
-        {
-             if ((trash %2) == 0)  
-                trash /= 2;
-             else
-             {
-                trash=3*trash+1;
-             }
-                total++;
-        }
-        if (total>result)
-        {
-             result=total; num=i;
-        }
-    }
-    cout << result+1<<"       "<< num ;;
+   for (int i = 1; i < 1000000; i++)
+   {
+      counter=0; temp=i;
+      while (temp!=1) 
+      {
+         if ((temp %2) == 0)  temp /= 2;
+         else  temp=3*temp+1;
+         counter++;
+      }
+      (counter > result) && (result = counter, num = i); //if counter is greater than result to reassign result and store number that has longest chain
+   }
+   cout << num ;;
 }

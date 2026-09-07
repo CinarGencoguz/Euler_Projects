@@ -34,17 +34,16 @@ long long int total, result;
 
 int main() {
     result = 0;
-    for (int i = 0; i < 1000; i++) {
-        nums[i] = s[i] - '0';
-    }
-    for (int i = 0; i <= 1000 - 13; i++) {
+    for (int i = 0; i < 1000; i++)      nums[i] = s[i] - '0'; // Program converts each character into an integer
+    for (int i = 0; i <= 1000 - 13; i++) 
+    {
         total = 1;
-        for (int k = 0; k < 13; k++) {
+        for (int k = 0; k < 13; k++) 
+        {
+            if (nums[i+k]==0) break; // Stops the loop if any of the 13 digits ,that we need to multiply, is zero
             total *= nums[i + k];
         }
-        if (total > result) {
-            result = total;
-        }
+        if (total > result)     result = total; 
     }
     cout << result;
 }

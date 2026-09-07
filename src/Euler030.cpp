@@ -2,31 +2,22 @@
 // Find the sum of all the numbers that can be written as the sum of fifth powers of their digits.
 
 #include <iostream>
-#include <set>
 #include <math.h>
 using namespace std;
-int total,num1,num2,result;
-int  powers[1000];
+int total,temp,result;
 
-int 
-main()
+int main()
 {
     num2=0;result=0;
-    for (int i = 100; i < 1000000; i++)
+    for (int i = 100; i < 1000000; i++) //I ketp between 100 and 1000000 because of 6* 9^5 = 354294 that means it can not have more than 6 digit
     {
-        total=0;num1=i;
-        while (num1>=1)
+        total=0;temp=i;
+        while (temp>=1)
         {
-            total+=pow(num1%10,5);
-            num1/=10;
+            total+=pow(temp%10,5); 
+            temp/=10;
         }
-        if (total==i)
-        {
-            powers[num2]=i;
-            num2++;
-        }  
-    }
-    for (int i = 0; i < num2; i++)
-        result+=powers[i];  
+        if (total==i)   result+=i;
+    } 
     cout<< result;
 }

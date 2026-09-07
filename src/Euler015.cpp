@@ -4,45 +4,16 @@
 // How many such routes are there through a 20x20 grid?
 
 #include <iostream>
-#include <math.h>
 using namespace std;
-int num1[20],num2[20],primenum[8];
-int prime[9]={2,3,5,7,11,13,17,19};
-long long int product;
+long long int result=1; // selected long long int to prevent overflow
 
 int main()
 {
-    for (int i = 0; i < 20; i++)
-    {
-        for (int k = 21; k <= 40; k++)
-        {
-            num1[i]=k;num2[i]=i+1;i++;
-        } 
+    for (size_t i = 21; i <= 40; i++) // based on formula 40!/(20!x20!) we can eliminate first 20! because 40 has already has every multiplication 20! has,
+    {                                 // we dont need to worry about the result can divides evenly without leaving a remainder 
+        result*=i;                    // because  every loop execution ,we can consider numerator and denominator as consecutive number 
+        result/=(i-20);
     }
-    for (int i = 0; i < 20; i++)
-    {
-           for (int k = 0; k < 8; k++)
-           {
-                while(num1[i]%prime[k]==0)
-                {
-                    num1[i]/=prime[k];
-                    primenum[k]++;
-                }
-                 while(num2[i]%prime[k]==0)
-                {
-                    num2[i]/=prime[k];
-                    primenum[k]--;
-                }
-           }
-    }
-    product=1;
-    for (int i = 0; i < 8; i++)
-    {
-        product=product*pow(prime[i],primenum[i]);
-    }
-    for (int i = 0; i < 20; i++)
-    {
-        product*=num1[i];
-    }
-    cout<< product;
+    
+    cout<< result;
 }
