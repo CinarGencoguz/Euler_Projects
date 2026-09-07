@@ -4,43 +4,28 @@
 #include <iostream>
 #include <math.h>
 #include <string>
+#include "../include/MathUtils.hpp"
 using namespace std;
-int counter,num1,num2,num3,t,result;
+int counter,startpoint,mod,result;
 string s;
-bool ok;
-
-bool IsPrime(int a)
-{
-    if(a < 2) return false;
-    if(a == 2) return true;
-    if(a % 2 == 0) return false;
-    for (size_t i = 3; i <= sqrt(a)+1; i++)
-    {
-        if (a%i==0)
-            return false;
-    }
-    return true;
-}
+bool isTruncatable;
 
 int main()
 {
-    counter=result=0;num1=11;
+    counter=result=0;startpoint=11;
     while (counter!=11)
     {
-        s=to_string(num1);ok=true;num2=num1;
+        s=to_string(startpoint); isTruncatable=true;// converted to string for easily find size of integer
+        if (!Mathutilus::IsPrime(startpoint)){ startpoint +=2 ; continue;}
         for (int i = 0; i < s.size(); i++)
         {
-            t=pow(10,s.size()-i);
-            if (!IsPrime(num1%t)||!IsPrime(num2/(t/10)))
-                {ok=false;
+            mod=pow(10,s.size()-i);    //find modulus and diverder . as example  397  mod = 100
+            if (!Mathutilus::IsPrime(startpoint%mod)||!Mathutilus::IsPrime(startpoint/(mod/10)))  // first prime controller look right to left top right 397 97 7 , second one look opposite way 3 39 397
+                {isTruncatable=false;
                 break;}
         }
-        if (ok)
-        {
-            counter++; result+=num1;
-            cout << num1<< endl;
-        }
-        num1++;
+        if (isTruncatable)  {counter++; result+=startpoint;}
+        startpoint+=2;
     }
     cout << result;
 }
