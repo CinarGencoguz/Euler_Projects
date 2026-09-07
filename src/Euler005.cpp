@@ -7,37 +7,19 @@
 #include <iostream>
 #include <math.h>
 using namespace std;
-int a1 ,a2, primenum,result;
-int prime[20];
+int result=1,temp1;
+int prime[8]={2,3,5,7,11,13,17,19}; // Problem requires up to 20 if we need to generalize the program we requires to include a prime finder as a function
 
 int main()
 {
-    primenum=1; result =1;
-   for (int i = 2; i <= 20; i++)
+    for (size_t i = 0; i < 8; i++)//program based on prime numbers. As I thought we need to find 20's highest prime powers for smallest result 
     {
-        a1=0;
-        for (int k = 1; k <= i/2+1; k++)
+        temp1=1;
+        while (temp1*prime[i]<20)
         {
-            if (i==2)
-            prime[0]=2;
-            if (i%k==0)
-                a1++;            
-            if (a1>1)
-                break;
-            if (k>i/2)
-            {
-                prime[primenum]=i;   primenum++;
-            }
+            temp1*=prime[i]; 
+            result*=prime[i];
         }
-    }
-    for (int i = 0; i < primenum; i++)
-    {
-        a2=0;
-       while (pow(prime[i],a2)<20)
-       {
-             a2++;
-       }
-       result*=pow(prime[i],a2-1);
-    }
+    }    
     cout << result;
 }
