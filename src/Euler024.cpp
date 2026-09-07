@@ -4,43 +4,29 @@
 // What is the millionth lexicographic permutation of the digits 0, 1, 2, 3, 4, 5, 6, 7, 8 and 9?
 
 #include <iostream>
+#include "../include/MathUtils.hpp"
 using namespace std;
-int Numbers[10];
+int Numbers[10]={0,1,2,3,4,5,6,7,8,9};
 int Result[10];
-int total;
-int c, b, Millionth;
+int total,  digits, Millionth;
 int main()
 {
-	c = 0; b = 9; Millionth = 1000000; total = 2 * 3 * 4 * 5 * 6 * 7 * 8 * 9;
-	for (int i = 0; i < 10; i++)
-	{
-		Numbers[i] = i;
-	}
-	while (c!=9)
-	{
-		for (int i = 1; i <= b+1; i++)
+	digits = 9; Millionth = 1000000; total = Mathutilus::Factoriel(9); 
+	while (digits!=0)
+	{	
+		for (int i = 0; i <= digits+1; i++)//program finds digits by checking permutation
 		{
 			if (total * i >= Millionth)
 			{
-				Result[c] = Numbers[i-1];
-				for (int k = i-1; k < b; k++)
-				{
-					Numbers[k] = Numbers[k+1];
-				}
-				c++;
-				Millionth -= (i-1 ) * total;
-				if (b!=0)
-				{
-					total /= b;
-				}
-				b -= 1;
+				Result[9-digits] = Numbers[i-1];
+        		for (int k = i-1; k < digits; k++)     Numbers[k] = Numbers[k+1]; //Removes used digit by shifting remaining elements left
+				Millionth -= (i-1 ) * total;                                      // Subtracts skipped permutations from target index
+				if (digits!=0)     total /= digits; 							  //Reduces factorial packet size for the next position
+				digits -= 1;
 				break;
 			}
 		}
 	}
 	cout << endl;
-	for (int i = 0; i < 10; i++)
-	{
-		cout << Result[i];
-	}
+	for (int i = 0; i < 10; i++)	cout << Result[i];
 }
