@@ -10,21 +10,18 @@ int num,total ,result;
 
 int main()
 {
-    for (int i = 800; i < 1000; i++)
+    for (int i = 800; i < 1000; i++) //I thought the result must be closer to 999999 and higher than 900000 because of those reasons, I kept the threshold between 800 to 1000
     {
         for (int k = 800; k < 1000; k++)
         {
             total=i*k; num=0;
-            while (total>=1)
+            while (total>=1) //Separate the digits to an array
             {
                 nums[num]=total%10;
                 total/=10;
                 num++;
             }
-            if (nums[0]==nums[5]&&nums[1]==nums[4]&&nums[2]==nums[3])
-            {
-                result=i*k;
-            }    
+            if (nums[0]==nums[5]&&nums[1]==nums[4]&&nums[2]==nums[3])    result=i*k;  // Looking to product for 6 digits number if it is palindrome or not
         }
     }
     cout<< result;
