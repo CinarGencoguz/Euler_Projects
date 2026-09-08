@@ -7,8 +7,8 @@
 #include <math.h>
 #include <string>
 using namespace std;
-int a,i,digit;
-unsigned long long int num1,num2,trash,result;
+int counter,i,digit;
+unsigned long long int num1,num2,temp,result;
 
 bool IsPrime(int a)
 {
@@ -23,35 +23,24 @@ bool IsPrime(int a)
     return true;
 }
 
-bool IsPalidromInt(unsigned long long int a,int digit)
-{
-    string x =to_string(a);
-    for (int i = 0; i < digit/2; i++)
-    {
-        if (x[i]!=x[digit-(i)])   return false;
-    }
-    return true;
-}
-
 int main()
 {
-    a=result=0;i=11;
-    while(a!=50)
+    counter=result=0;i=11;
+    while(counter!=50)
     {
-        if(!IsPrime(i)) {i++; continue;}
-        num1=i;num1*=i; digit=(int)log10(num1); num2=0;
-        for (int t = 0; t <= digit; t++)
+        if(!IsPrime(i)) {i+=2; continue;}
+        num1=i*i; 
+        digit=(int)log10(num1); //Computes the number of digits by using log10
+        num2=0;
+        for (int t = 0; t <= digit; t++) // Reverses the digits of num1
         {
-            trash=num1/pow(10,t); trash%=10; trash*=pow(10,digit-t);
-            num2+=trash;
+            temp=num1/pow(10,t); 
+            temp%=10; 
+            temp*=pow(10,digit-t);
+            num2+=temp;
         }
-        IsPalidromInt(num2,digit);
-        trash=sqrt(num2);
-        if (IsPrime(trash)&& num2==trash*trash&&!IsPalidromInt(num2,digit))
-        {
-            a++; cout <<num1<<   "       "<< i<< endl;
-            result+=num1;
-        }
+        temp=sqrt(num2);
+        if (IsPrime(temp)&& num2==temp*temp&&num1!=num2)    {counter++; result+=num1;} // check if square root of num2 prime , is it perfect square and is num2 same as real num1
         i+=2;
     }
     cout <<result;

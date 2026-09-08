@@ -31,19 +31,28 @@ namespace Mathutilus
         return temp;
     }
 
-    bool IsPalindromString(string s) // Checks if a string reads the same forward and backward
-{
-    int left,right;
-    left=0,right=s.size()-1;
-    while (left<right)
+    inline bool IsPalindromString(string s) // Checks if a string reads the same forward and backward
     {
-        if (s[left]!=s[right])
-            return false;
-        left++;right--;
+        int left,right;
+        left=0,right=s.size()-1;
+        while (left<right)
+        {
+            if (s[left]!=s[right])
+                return false;
+            left++;right--;
+        }
+        return true;
     }
-    return true;
-}
-
+ 
+    inline bool IsPalidromInt(unsigned long long int a,int digit)
+    {
+        string x =to_string(a);
+        for (int i = 0; i < digit/2; i++)
+        {
+            if (x[i]!=x[digit-(i)])   return false;
+        }
+        return true;
+    }
 
 }
 
