@@ -5,9 +5,10 @@
 #include <iostream>
 using namespace std;
 int result,sum;
-//1p, 2p, 5p, 10p, 20p, 50p, £1
+//1p, 2p, 5p, 10p, 20p, 50p, 100p
 int main()
 {
+    //threshold is decided based on limit for decrease execution time
     result=1;
     for (int i = 0; i <=2; i++)//100
     {
