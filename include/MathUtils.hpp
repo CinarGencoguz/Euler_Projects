@@ -21,7 +21,6 @@ namespace Mathutilus
         return true;
     }
 
-
     inline int Factoriel(int a)
     {
        int temp=1;
@@ -44,7 +43,7 @@ namespace Mathutilus
         return true;
     }
  
-    inline bool IsPalidromInt(unsigned long long int a,int digit)
+    inline bool IsPalindromInt(unsigned long long int a,int digit) // Checks if a int reads the same forward and backward
     {
         string x =to_string(a);
         for (int i = 0; i < digit/2; i++)
@@ -54,6 +53,38 @@ namespace Mathutilus
         return true;
     }
 
+    inline string PowofString(const string &num, int PowNum) // Multiplies a large number (represented as a string) by an integer
+    {
+        string result = "";
+        int carry = 0;int prod;
+        for (int i = num.size() - 1; i >= 0; i--)  // Process digits from right to left
+        {
+            prod = (num[i] - '0') * PowNum + carry; //Converts character to integer
+            carry = prod / 10;                      //Converts character to integer
+            prod %= 10;                             //keep single digit
+            result = char(prod + '0') + result;     // Prepends digit to the result string
+        }
+        while (carry > 0) 
+        {
+            result = char(carry % 10 + '0') + result;
+            carry /= 10;
+        }
+        return result;
+    }
+
+    long long int modpow(long long int base, unsigned long long int pow) // power simplify function
+    {
+    long long int res = 1;
+    base %= mod; 
+    while (pow > 0)  // get  it's power 1 time and process modulus which prevents overflow
+    {
+        if (pow % 2 == 1)          
+        res = (res * base) % mod; 
+        base = (base * base) % mod;   
+        pow = pow / 2;              
+    }
+    return res;
+    }
 }
 
 
