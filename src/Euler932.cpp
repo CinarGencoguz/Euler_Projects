@@ -11,7 +11,6 @@ unsigned long long int result=0,num=50;
 unsigned long long int temp1,temp2,split1,split2,numSquare;
 unsigned long long int digitsq,digitsquareH,digitsquareL;
 int digit,digitL,digitH;
-
 bool IsDigitEven(unsigned long long int a,int& n) // checking number of digit is even or not
 {
     n=0;

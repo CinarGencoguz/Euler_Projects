@@ -7,21 +7,28 @@
 
 #include <iostream>
 using namespace std;
-int result=106,a;
-string tens[9]={"ten","twenty","thirty","forty","fifty","sixty","seventy","eighty","ninety"};
+int result=0,temp;
+string tens[10]={"ten","twenty","thirty","forty","fifty","sixty","seventy","eighty","ninety","eleven"};
 string number[9]={"one","two","three","four","five","six","seven","eight","nine"};
-//hundred
+//Computes: 10 times the first 99 numbers, 900 times 'hundred', 100 times each hundred prefix, 891 times 'and', and 'one thousand'
 int main()
 {
+    for (size_t i = 1; i < 20; i++) // compute 1-19
+    {
+        if(i<10) result+=number[i-1].size();
+       if(i>=10)result+=(tens[i-10].size()+2);//Adds 2 extra letters for the '-teen' pattern after 9, offset by -5 to correct cases like 10, 11, 12, and 14
+    }
+    result-=5;
+    cout << result << endl;
     for (int i = 20; i < 100; i++)
     {
-        a=i/10;
-        result+=tens[a-1].size();
-            if(i%10!=0)
-                result+=number[(i%10)-1].size();
+        temp=i/10;
+        result+=tens[temp-1].size();
+        if(i%10!=0) result+=number[(i%10)-1].size();   
     }
-    result*=10; result+=11; result+=900*7+891*3;
-    for (int i = 0; i < 9; i++)
-        result+=number[i].size()*100;
+    cout << result << endl;
+    result*=10;
+    for (size_t i = 0; i < 9; i++)  {result+=(number[i].size()*100);}   //Adds letters for hundred prefixes, 'hundred', 'and' (891 times), and 'one thousand'
+    result+=((900*7)+11+(891*3));
     cout << result;
 }
