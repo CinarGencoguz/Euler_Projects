@@ -5,35 +5,25 @@
 
 #include <iostream>
 using namespace std;
-int dive1,dive2,a,result;
-int nums[1000];
+int factor1,factor2,result;
 
 int main()
 {
-    a=result=0;
-    for (int i = 28; i < 10000; i++)
+    result=0;
+    for (int num = 28; num < 10000; num++)//factor function threshold is set to x/2+1 because we should not calculate number itself and decrease execution time
     {
-        dive1=dive2=0;
-        for (int k = 1; k <=(i/2)+1; k++)
+        factor1=factor2=0;
+        for (int k = 1; k <(num/2)+1; k++)  //computes num factors sum as factor1  
         {
-            if (i%k==0)
-                dive1+=k;;
+            if (num%k==0)
+                factor1+=k;;
         }
-        for (int t = 1; t < (dive1/2)+1; t++)
+        for (int t = 1; t < (factor1/2)+1; t++)//computes factor1's factors sum as factor2
         {
-            if (dive1%t==0)
-                dive2+=t;
+            if (factor1%t==0)
+                factor2+=t;
         }
-        if (i==dive2&&i!=dive1)
-        {
-            nums[a]=i;
-            a++;
-        }
+        if (num==factor2&&num!=factor1)     result+=num;
     }
-    for (int i = 0; i < a; i++)
-    {
-        cout << nums[i]<< endl;
-        result+=nums[i];
-    }
-    cout <<endl<< result;
+    cout << result;
 }
