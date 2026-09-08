@@ -1,6 +1,10 @@
-#include <math.h>
 #ifndef MATH_UTILS_HPP
 #define MATH_UTILS_HPP
+
+#include <math.h>
+#include <string>
+#include <iostream>
+using namespace std;
 
 namespace Mathutilus
 {

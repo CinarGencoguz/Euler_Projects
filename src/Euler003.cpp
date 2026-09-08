@@ -15,6 +15,7 @@ int main()
     {
         if (Mathutilus::IsPrime(i))
         {
+            prime[primeCounter]=i;
             primeCounter++;
         }
         
