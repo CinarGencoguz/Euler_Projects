@@ -7,58 +7,43 @@
 #include <iostream>
 #include <math.h>
 using namespace std;
-unsigned long long int result,limit,a,b,c;
-unsigned long long int a1,b1;
-unsigned long long int csq,digitsq,digitsqH,digitsqL;
+unsigned long long int result=0,num=50;
+unsigned long long int temp1,temp2,split1,split2,numSquare;
+unsigned long long int digitsq,digitsquareH,digitsquareL;
 int digit,digitL,digitH;
 
-bool IsDigitEven(unsigned long long int a,int& n)
+bool IsDigitEven(unsigned long long int a,int& n) // checking number of digit is even or not
 {
     n=0;
-    while (a>=1)
+    while(a>=1)
     {
         a/=10;
         n++;
     }
-    if (n%2==0) 
-    {
-        return true;
-    }
+    if (n%2==0)    return true;
     return false;
 }
 
 int main()
 {
-    limit = pow(10,9)/10; result=0; c=8;
-    while (digit<=16)
+    while (digit<=16) // program splits the integer by using modulus and division. as an example 4982 => 4982/100 =49 , 4982%100 =82 and we got 49 and 82
     {
-        csq=c*c; digitsq=pow(10,digit/2);
-        if(!IsDigitEven(c*c,digit)) 
+        numSquare=num*num; digitsq=pow(10,digit/2);
+        if(!IsDigitEven(num*num,digit))  // if it is not even we split as x -- x+1 or x+1 -- x 
         {
-            digitH=(digit+1)/2; digitL=digitH-1;
-            digitsqH=pow(10,digitH);digitsqL=pow(10,digitL);
-            b=csq%digitsqH; a=csq/digitsqH;
-            b1=csq%digitsqL; a1=csq/digitsqL;  
-            if(b<digitsqH/10) {c++ ;continue;}      
-            if(b<digitsqL/10) {c++ ;continue;}      
+            digitH=(digit+1)/2; digitL=digitH-1;  //digitH split it as x -- x+1 , digitL split it as x+1 -- x
+            digitsquareH=pow(10,digitH);digitsquareL=pow(10,digitL);
+            split2=numSquare%digitsquareH; split1=numSquare/digitSquareH;  
+            temp2=numSquare%digitsquareL; temp1=numSquare/digitSquareL;         
         }
-        else
+        else    {split2=numSquare%digitsq; split1=numSquare/digitsq;} //If the digit count is even, split the number equally and execute the checking procedure
+        if(split2<digitsquareH/10) {num++ ;continue;}
+        if(num==split1+split2||num==temp2+temp1)
         {
-            b=csq%digitsq; a=csq/digitsq;
-            if(b<digitsq/10) {c++ ;continue;} 
-        } 
-        if(c==a+b||c==b1+a1)
-        {
-            result+=csq;
-            cout<<csq;
-            if (digit%2!=0)
-            {
-                cout<<"     "<< digit;
-            }
-            cout <<endl;
-            
+            result+=numSquare;
+            cout<<numSquare<<endl;
         }
-        c++;
+        num++;
     }
     cout <<endl << result;
 }
