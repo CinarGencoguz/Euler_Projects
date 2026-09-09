@@ -28,7 +28,7 @@ int main()
    {
       digit= fibo[i]/9;  //how many 9 in number
       remain = fibo[i]%9;  // what is the starting digit if it is equal 0 ,starting digit will be 9
-      tenpow = Mathutilus::modpow(10, digit); 
+      tenpow = Mathutilus::modPow(10, digit); 
       coefficient = ((remain * remain) + 3 * remain + 12);
       sub = (((digit % mod) * 9) % mod + remain + 6) % mod;  
       num1 = (((coefficient * invmod) % mod)*tenpow)%mod-sub;

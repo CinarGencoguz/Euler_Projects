@@ -4,6 +4,7 @@
 #include <math.h>
 #include <string>
 #include <iostream>
+#include "../include/MathUtils.hpp"
 using namespace std;
 
 namespace Mathutilus
@@ -19,15 +20,6 @@ namespace Mathutilus
             if (a%i==0) return false;
         }
         return true;
-    }
-
-    inline int Factoriel(int a)
-    {
-       int temp=1;
-        if (a<0)  return 0;
-        if (a==0)   return 1;
-        for (int i = 2; i <= a; i++)   temp *= i;
-        return temp;
     }
 
     inline bool IsPalindromString(string s) // Checks if a string reads the same forward and backward
@@ -53,6 +45,58 @@ namespace Mathutilus
         return true;
     }
 
+    inline bool IsPandigital(int a)// checks if the number has all different digit except 0
+    {
+        set<int> nums;
+        while (a>=1)
+        {
+            nums.insert(a%10);
+            if (a%10==0&&nums.size()!=9)    return false;
+            a/=10;
+        }
+        if (nums.size()!=9)     return false;
+        return true;
+    }
+
+    inline bool isPentagon(long long x)  //checks if the number satisfy Pentagon rule
+    {
+        // (3n^2-n)/2=x  1+24x pentagon rule
+        long long s = 1 + 24*x;
+        long long root = (long long)(sqrt(s) + 0.5);
+        return root*root == s && (1 + root) % 6 == 0; // checks root is integer or not using the quadratic Root Finding
+    }
+
+    inline bool isHexagon(long long x)  //checks if the number satisfy Hexagon rule
+    {
+        // (2n^2-n)=x   1+8x  hexagon rule
+        long long s = 1 + 8*x;
+        long long root = (long long)(sqrt(s) + 0.5);
+        return root*root == s && (1 + root) % 6 == 0; // checks root is integer or not using the quadratic Root Finding
+    }
+
+    inline int Factoriel(int a)
+    {
+       int temp=1;
+        if (a<0)  return 0;
+        if (a==0)   return 1;
+        for (int i = 2; i <= a; i++)   temp *= i;
+        return temp;
+    }
+
+    inline long long int modPow(long long int base, unsigned long long int pow) // power simplify function
+    {
+    long long int res = 1;
+    base %= mod; 
+    while (pow > 0)  // get  it's power 1 time and process modulus which prevents overflow
+    {
+        if (pow % 2 == 1)          
+        res = (res * base) % mod; 
+        base = (base * base) % mod;   
+        pow = pow / 2;              
+    }
+    return res;
+    }
+
     inline string PowofString(const string &num, int PowNum) // Multiplies a large number (represented as a string) by an integer
     {
         string result = "";
@@ -72,32 +116,6 @@ namespace Mathutilus
         return result;
     }
 
-    inline long long int modpow(long long int base, unsigned long long int pow) // power simplify function
-    {
-    long long int res = 1;
-    base %= mod; 
-    while (pow > 0)  // get  it's power 1 time and process modulus which prevents overflow
-    {
-        if (pow % 2 == 1)          
-        res = (res * base) % mod; 
-        base = (base * base) % mod;   
-        pow = pow / 2;              
-    }
-    return res;
-    }
-
-    inline bool IsPandigital(int a)// checks if the number has all digit except 0
-    {
-        set<int> nums;
-        while (a>=1)
-        {
-            nums.insert(a%10);
-            if (a%10==0&&nums.size()!=9)    return false;
-            a/=10;
-        }
-        if (nums.size()!=9)     return false;
-        return true;
-    }
 }
 
     
