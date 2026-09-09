@@ -3,7 +3,6 @@
 // concatenated product of an integer with (1,2, ... , n) where n > 1?
 
 #include <iostream>
-#include <set>
 #include "../include/MathUtils.hpp"
 using namespace std;
 long int num,result=0;
