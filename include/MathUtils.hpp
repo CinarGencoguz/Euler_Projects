@@ -72,7 +72,7 @@ namespace Mathutilus
         return result;
     }
 
-    long long int modpow(long long int base, unsigned long long int pow) // power simplify function
+    inline long long int modpow(long long int base, unsigned long long int pow) // power simplify function
     {
     long long int res = 1;
     base %= mod; 
@@ -85,8 +85,20 @@ namespace Mathutilus
     }
     return res;
     }
+
+    inline bool IsPandigital(int a)// checks if the number has all digit except 0
+    {
+        set<int> nums;
+        while (a>=1)
+        {
+            nums.insert(a%10);
+            if (a%10==0&&nums.size()!=9)    return false;
+            a/=10;
+        }
+        if (nums.size()!=9)     return false;
+        return true;
+    }
 }
 
-
-
+    
 #endif // MATH_UTILS_HPP+
