@@ -4,64 +4,40 @@
 
 #include <iostream>
 #include <math.h>
-#include <set>
+#include "../include/MathUtils.hpp"
 using namespace std;
-int mainnum,num1,num2,num3,num4;
-int Primes[200000],primenum;
+int num=1001;
+int primeNums[30000],primeCounter=0;
 
-bool IsPrime(int a)
+int primeFactor(int a)
 {
-    for (size_t i = 3; i <= sqrt(a)+1; i++)
+    int temp , counter=0, primeCounter=0;
+    while (counter<5)
     {
-        if(a < 2) return false;
-        if(a == 2) return true;
-        if(a % 2 == 0) return false;
-        if (a%i==0)
-            return false;
+        if(primeNums[primeCounter]>a/2) break;
+        if (a%primeNums[primeCounter]==0){counter++;}
+        primeCounter++;
     }
-    return true;
-}
-
-int PrimeCounter(int a)
-{
-    set <int> big;
-    int num=0;
-    while (a>1)
-    {
-        if (a%Primes[num]==0)
-        {
-            big.insert(Primes[num]);
-            a/=Primes[num];
-            if (a%Primes[num]==0)
-            {
-                continue;
-            }
-        }  
-        num++;
-    }
-    return big.size();
+    return counter==4;
 }
 
 int main()
 {
-    primenum=1;Primes[0]=2;mainnum=1001;
-    for (int i = 3; i < 150000; i++)
+    for (int i = 2; i < 150000; i++) //stores prime numbers in to an array
     {
-        if (IsPrime(i))
+        if (Mathutilus::IsPrime(i))
         {
-            Primes[primenum]=i;
-            primenum++;
+            primeNums[primeCounter]=i;
+            primeCounter++;
         }
     }
-    while (true)
+    while (true)//checks the number satisfy conditions
     {
-        num1=mainnum;num2=mainnum+1;num3=mainnum+2;num4=mainnum+3;
-        if (PrimeCounter(num1)==PrimeCounter(num2)&&PrimeCounter(num2)==PrimeCounter(num3)&&PrimeCounter(num3)==PrimeCounter(num4)
-    &&PrimeCounter(num4)==4)
+        if (primeFactor(num) &&primeFactor(num+1) &&primeFactor(num+2) &&primeFactor(num+3))
         {
-            cout<< mainnum;
+            cout<< num;
             break;
         }
-        mainnum++;
+        num++;
     }
 }

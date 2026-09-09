@@ -4,7 +4,6 @@
 #include <math.h>
 #include <string>
 #include <iostream>
-#include "../include/MathUtils.hpp"
 using namespace std;
 
 namespace Mathutilus
