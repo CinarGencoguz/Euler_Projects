@@ -5,18 +5,17 @@
 // what is the maximum digital sum?
 
 #include <iostream>
-#include <string>
 using namespace std;
 long long int result,num;
 
-int finddigitsum(int i, int k)
+int finddigitsum(int base, int power) //calculates digits sums by stores each digit as an element in array
 {
     int digits[10000]={0};  digits[0]=1;  int num=1;   int sum=0;
-    for (size_t t = 0; t < k; t++)
+    for (size_t t = 0; t < power; t++)
     {
-        for (size_t g = 0; g < num; g++)
-            digits[g]*=i;
-        for (int d = 0; d < num; d++)
+        for (size_t g = 0; g < num; g++)//multiplies by base each digit
+            digits[g]*=base;
+        for (int d = 0; d < num; d++)//checks each digit if does have carry or dont
         {
             if (digits[d]>=10)
             {
@@ -42,7 +41,6 @@ int main()
             num=finddigitsum(i,k);
             if (num>result)
                 result=num;
-            cout <<i << "     "<<k << "       "<< num<< endl;;
         }
     }
     cout <<result;
