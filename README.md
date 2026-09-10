@@ -33,18 +33,20 @@ Beyond the numeric result, this repo is meant to demonstrate:
 
 ## 🗂️ Repository Structure
 
+```text
 Euler_Projects/
-├── src/ # Individual problem solutions (one .cpp per problem)
-│ ├── Euler001.cpp
-│ ├── Euler002.cpp
-│ ├── Euler022.cpp
-│ └── ...
-├── include/ # Shared, reusable utility headers
-│ └── MathUtils.hpp # Number theory & math helper functions
-├── data/ # Problem-specific input files provided by Project Euler
-│ ├── 022_names.txt
-│ └── 042_words.txt
-└── README.md
+├── .clang-tidy        # Static analysis configuration (LLVM / Clang)
+├── CMakeLists.txt     # Build automation configuration
+├── README.md          # Project documentation and guide
+├── include/
+│   └── MathUtils.hpp  # Reusable mathematical & algorithmic utilities
+├── src/
+│   ├── Euler001.cpp   # Individual problem solutions (Euler001 - Euler932)
+│   ├── Euler002.cpp
+│   └── ...
+└── data/
+    ├── 022_names.txt  # Problem-specific input data files
+    └── 042_words.txt
 
 ---
 
