@@ -4,45 +4,25 @@
 // How many n-digit positive integers exist which are also an nth power?
 
 #include <iostream>
+#include <math.h>
 using namespace std;
-int counter,p,result;
-
-bool arraymult(int base,int power)
-{
-    int nums[50]={0},k,remain,addition; 
-    nums[0]=1; k=1;remain=addition=0;
-    for (int i = 0; i < power; i++)
-    {
-        for (int t = 0; t < k; t++)     nums[t]*=base;
-        for (int g = 0; g < k; g++)
-        {
-            if (g==k-1 && nums[g]>=10)
-                k++;
-            nums[g+1]+=nums[g]/10;
-            nums[g]=nums[g]%10;
-        }
-    }
-    if (power==k)   return true;
-    return false;
-}
-
+int power,result=0,digit;
 
 int main()
 {
-    counter=1;result=0;p=1;
-    while (counter<10)
+    for (size_t i = 1; i < 10; i++) 
     {
-        for (int i =counter; i < 10; i++)
+        power=1;
+        while (true)
         {
-            if (arraymult(i,p)==true)
+            digit=log10(pow(i,power))+1; // calculates the number of digits by using algorithm
+            if (digit==power)
             {
                 result++;
-                cout << i << "    "<< p << endl;
+                power++;
             }
-            else    
-            counter++;
-        }
-        p++;
-    }
-    cout << result;
+            else break;
+        }       
+    } 
+    cout << result; 
 }
