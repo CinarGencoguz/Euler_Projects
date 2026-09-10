@@ -7,40 +7,26 @@
 #include <iostream>
 #include <math.h>
 using namespace std;
-unsigned long long int replica1,replica2,a;
-int result,digit;
-
-int FindDigit(int a)
-{
-    int digit=0;
-    while (a>=1)
-    {
-        a/=10;
-        digit++;
-    }
-    return digit;
-}
+unsigned long long int number,temp2,a;
+int result=9999999,nOD; // nOD -> number of digit 
 
 int main()
 {
-    result=9999999;
-    for (int i = 1; i < 10000000; i++)
+    for (int i = 1; i < 10000000; i++)//program computes number which is going to 1 after execution and eliminate them from 999999
     {
-        replica1=i; replica2=0;
-        while (replica2!=89&&replica2!=145&&replica2!=154&&replica2!=451&&replica2!=415&&replica2!=514&&replica2!=541&&replica2!=58&&replica2!=85)
+        number=i; temp2=0;
+        while (temp2!=89)
         {
-            replica2=0; digit= FindDigit(replica1);
-            for (int k = 0; k < digit; k++)
+            temp2=0; nOD= log10(number)+1; //calculates number of digit by using logarithm
+            for (int k = 0; k < nOD; k++) //computes sum of square of digits
             {
-                a=replica1/pow(10,k); a=a%10;
-                replica2+=a*a;
+                a=number/pow(10,k); a=a%10;
+                temp2+=a*a;
+                cout << a < "_";
             } 
-            if (replica2==1||replica2==31||replica2==23||replica2==44)
-            { 
-                result--;
-                break;
-            }
-            replica1=replica2;
+            cout << endl;
+            if (temp2==1)   { result--; break;}
+            number=temp2;
         }
     }
     cout << endl<<result;
