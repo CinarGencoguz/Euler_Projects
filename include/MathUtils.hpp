@@ -70,7 +70,15 @@ namespace Mathutilus
         // (2n^2-n)=x   1+8x  hexagon rule
         long long s = 1 + 8*x;
         long long root = (long long)(sqrt(s) + 0.5);
-        return root*root == s && (1 + root) % 6 == 0; // checks root is integer or not using the quadratic Root Finding
+        return root*root == s && (1 + root) % 4 == 0; // checks root is integer or not using the quadratic Root Finding
+    }
+
+    inline bool isTriangle(long long x) //checks if the number satisfy Triangle rule
+    {
+        // (n^2+n)/2=x   1+8x   triangle rule
+        long long s = 1 + 8*x;
+        long long root = (long long)(sqrt(s) + 0.5);
+        return root*root == s; // checks root is integer or not using the quadratic Root Finding
     }
 
     inline int Factoriel(int a)

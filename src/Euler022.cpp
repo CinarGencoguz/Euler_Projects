@@ -21,7 +21,7 @@ int main()
     stringstream ss(line);
     while (getline(ss, temp, ','))   words[n++] = temp; // taking strings between ',' and stores in array and it's storing it as 'word'
     file.close();
-    sort(words, words+n); //sorting arrays based on alphabet
+    sort(words, words+n); //sorting array based on alphabet
     for (int i = 0; i < n; i++)
     {
         for (int t = 1; t < words[i].size()-1; t++)

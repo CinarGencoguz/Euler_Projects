@@ -9,49 +9,36 @@
 #include <string>
 #include <algorithm>
 #include <math.h>
+#include "../include/MathUtils.hpp"
 using namespace std;
-string arr[6000];
-int n ,result,g;
-string line,temp;
+
+string words[6000],line,temp2;
+int n =0,result=0,temp1;
 char alphabet[26] = {'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'};
-//n^2+n-2y=0  b^2-4ac    1  -4*-2
-bool isTriangle(long long x) 
+
+int main() 
 {
-    long long s = 1 + 8*x;
-    long long root = (long long)(sqrt(s) + 0.5);
-    return root*root == s;
-}
-int vmain() 
-{
-    result=n=0;
-    ifstream file("0042_words.txt");
-    if (!file.is_open()) 
-    {
-        return 1;
-    }
+    ifstream file("../data/042_names.txt");
+    if (!file.is_open())    return 1;
     getline(file, line);
     stringstream ss(line);
-    while (getline(ss, temp, ',')) 
-    {
-        arr[n++] = temp;
-    }
+    while (getline(ss, temp2, ','))  words[n++] = temp2; // taking strings between ',' and stores in array and it's storing it as 'word'
     file.close();
-    sort(arr, arr+n);
+    sort(words, words+n); //sorting array based on alphabet
     for (int i = 0; i < n; i++)
     {
-        g=0;
-        for (int t = 1; t < arr[i].size()-1; t++)
+        temp1=0;
+        for (int t = 1; t < words[i].size()-1; t++)
         {
             for (int k = 0; k < 26; k++)
             {
-                if (arr[i][t]==alphabet[k])
+                if (words[i][t]==alphabet[k])
                 {
-                    g+=(k+1);
+                    temp1+=(k+1);
                 }
             }
         }
-        if (isTriangle(g))
-            result++;   
+        if (Mathutilus::isTriangle(g))  result++;   
     }
     cout << result;
 }
