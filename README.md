@@ -81,7 +81,7 @@ Each solution is self-contained and can be compiled independently. Since some so
 
 ```bash
 # Clone the repository
-git clone https://github.com/<your-username>/Euler_Projects.git
+git clone https://github.com/CinarGencoguz/Euler_Projects.git
 cd Euler_Projects/src
 
 # Compile a single solution (include the shared headers with -I)
