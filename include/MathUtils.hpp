@@ -80,6 +80,17 @@ namespace Mathutilus
         long long root = (long long)(sqrt(s) + 0.5);
         return root*root == s; // checks root is integer or not using the quadratic Root Finding
     }
+    
+    inline bool IsAbundant(int a) //checks the number if it is abundant or not
+    {
+        sum=0;
+        for (size_t i = 1; i < a/2+1; i++)
+        {
+            if(a%i==0) sum+=i;
+            if(sum>a) return true;
+        }
+        return false;
+    }
 
     inline int Factoriel(int a)
     {

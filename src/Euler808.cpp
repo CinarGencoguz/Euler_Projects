@@ -6,29 +6,17 @@
 #include <iostream>
 #include <math.h>
 #include <string>
+#include "../include/MathUtils.hpp"
 using namespace std;
 int counter,i,digit;
 unsigned long long int num1,num2,temp,result;
-
-bool IsPrime(int a)
-{
-    if(a < 2) return false;
-    if(a == 2) return true;
-    if(a % 2 == 0) return false;
-    for (size_t i = 3; i <= sqrt(a)+1; i++)
-    {
-        if (a%i==0)
-            return false;
-    }
-    return true;
-}
 
 int main()
 {
     counter=result=0;i=11;
     while(counter!=50)
     {
-        if(!IsPrime(i)) {i+=2; continue;}
+        if(!Mathutilus::IsPrime(i)) {i+=2; continue;}
         num1=i*i; 
         digit=(int)log10(num1); //Computes the number of digits by using log10
         num2=0;
@@ -40,7 +28,7 @@ int main()
             num2+=temp;
         }
         temp=sqrt(num2);
-        if (IsPrime(temp)&& num2==temp*temp&&num1!=num2)    {counter++; result+=num1;} // check if square root of num2 prime , is it perfect square and is num2 same as real num1
+        if (Mathutilus::IsPrime(temp)&& num2==temp*temp&&num1!=num2)    {counter++; result+=num1;} // check if square root of num2 prime , is it perfect square and is num2 same as real num1
         i+=2;
     }
     cout <<result;
