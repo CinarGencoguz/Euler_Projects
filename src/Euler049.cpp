@@ -9,7 +9,7 @@
 #include "../include/MathUtils.hpp"
 using namespace std;
 
-bool digitComparer(int a,int b)//compares all number digits
+bool digitComparer(int a,int b)//// Checks if the 3 terms in the sequence (a, a+b, a+2b) are digit permutations of each other
 {
     int digits1[4],digits2[4],digits3[4];
     int temp1=a+b,temp2=a+b*2; bool flag=true;;
@@ -23,13 +23,13 @@ bool digitComparer(int a,int b)//compares all number digits
 
 int main()
 {
-    for (int i = 1001; i < 3300; i+=2)
+    for (int i = 1001; i < 3300; i+=2) // First term 'i' must be < 3333 so the 3rd term (i + 2k) stays within 4 digits (< 10000)
     {
         if (!Mathutilus::IsPrime(i)) continue;
-        for (size_t k = 100; k < 3400; k+=2)
+        for (size_t k = 100; k < 3400; k+=2)// Difference 'k' must be even so that (i + k) remains odd and potentially prime
         {
             if (!Mathutilus::IsPrime(i+k)||!Mathutilus::IsPrime(i+2*k)) continue;
-            if (Sum(i,k))    cout<<i<<i+k<<i+2*k<<endl;
+            if (digitComparer(i,k))    cout<<i<<i+k<<i+2*k<<endl;
         }
     } 
 }

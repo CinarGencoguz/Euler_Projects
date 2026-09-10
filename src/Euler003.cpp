@@ -11,7 +11,7 @@ long long int num=600851475143;
 int main()
 {
     int prime[25000];
-    for (int i = 2; i <= 50000; i++)
+    for (int i = 2; i <= 50000; i++) //stores the prime numbers in to an array
     {
         if (Mathutilus::IsPrime(i))
         {
@@ -20,7 +20,7 @@ int main()
         }
         
     }
-    for (int i = 0; i < primeCounter; i++)
+    for (int i = 0; i < primeCounter; i++)//computes the largest prime factor
     {
         while(num%prime[i]==0)
         {

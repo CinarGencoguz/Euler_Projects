@@ -16,8 +16,8 @@ int main()
    result=0;
     for (int i = 1; i < 1000000; i++)
     {
-        string1=to_string(i); bitset<20> a(i); string2=a.to_string();
-        string1.erase(0, string2.find_first_not_of('0'));
+        string1=to_string(i); bitset<20> a(i); string2=a.to_string();//converts integer to string and bit
+        string1.erase(0, string2.find_first_not_of('0'));//erase the 0 from bit prevent missmatch
         if (Mathutilus::IsPalindromString(string1)&&Mathutilus::IsPalindromString(string2))
         {
             result+=i;

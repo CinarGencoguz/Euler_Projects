@@ -10,6 +10,6 @@ long long int  result;
 
 int main()
 {
-    for (int i = 1; i <= 2000000; i++)  if (Mathutils::IsPrime(i))  result+=i;
+    for (int i = 1; i <= 2000000; i++)  if (Mathutils::IsPrime(i))  result+=i; //sum all prime number which is below two million
     cout << result;
 }

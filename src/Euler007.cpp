@@ -11,7 +11,7 @@ int primeCounter=0,primeNumber;
 int main()
 {
     primeNumber=1;
-    while (primeCounter<10001)
+    while (primeCounter<10001) //computes 10001st prime number
     {
         primeNumber++;
         if (Mathutils::IsPrime(i))

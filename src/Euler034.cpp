@@ -10,7 +10,7 @@ int temp,digit,total,result=0;
 
 int main()
 {
-    for (int i = 145; i < 100000; i++)
+    for (int i = 145; i < 100000; i++)//computes each digit factorial and sum them
     {
         temp=i; total=0;
         while (temp>=1)
