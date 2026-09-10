@@ -164,8 +164,8 @@ Solutions are added incrementally as I work through problems on [projecteuler.ne
 
 Feel free to explore the code, open an issue, or reach out if you'd like to discuss an approach or suggest an optimization.
 
-**Author:** *Çınar Gençoğuz*
-**Program:** B.Sc. Computer Science / Software Engineering — 2nd Year
+**Author:** Çınar Gençoğuz  
+**Program:** Computer Engineering — 2nd Year   
 **GitHub:** [@CinarGencoguz](https://github.com/CinarGencoguz)
 
 ---
