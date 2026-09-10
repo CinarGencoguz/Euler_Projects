@@ -8,7 +8,6 @@
 #include <algorithm>
 #include "../include/MathUtils.hpp"
 using namespace std;
-int num1,num2;
 
 bool digitComparer(int a,int b)//compares all number digits
 {
