@@ -9,34 +9,26 @@
 #include <string>
 #include <algorithm>
 using namespace std;
-string arr[6000];
-int n ,result;
-string line,temp;
+string words[6000],line,temp;
+int n=0 ,result=0;
 char alphabet[26] = {'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'};
 
 int main() 
 {
-    result=n=0;
-    ifstream file("0022_names.txt");
-    if (!file.is_open()) 
-    {
-        return 1;
-    }
+    ifstream file("../data/022_names.txt");
+    if (!file.is_open())    return 1;
     getline(file, line);
     stringstream ss(line);
-    while (getline(ss, temp, ',')) 
-    {
-        arr[n++] = temp;
-    }
+    while (getline(ss, temp, ','))   words[n++] = temp; // taking strings between ',' and stores in array and it's storing it as 'word'
     file.close();
-    sort(arr, arr+n);
+    sort(words, words+n); //sorting arrays based on alphabet
     for (int i = 0; i < n; i++)
     {
-        for (int t = 1; t < arr[i].size()-1; t++)
+        for (int t = 1; t < words[i].size()-1; t++)
         {
             for (int k = 0; k < 26; k++)
             {
-                if (arr[i][t]==alphabet[k])
+                if (words[i][t]==alphabet[k])
                 {
                     result+=(k+1)*(i+1);
                     break;
