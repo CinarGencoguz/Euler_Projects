@@ -7,9 +7,9 @@ using namespace std;
 int result;
 
 //top!/(minus!*bot!)
-bool combination(int top,int bot)
+bool combination(int top,int bot) // compute all combination over one milione true
 {
-    int minus=top-bot;   int counter=top;   int topnums[100];   int botnums[100];  int num1=0; long double result=1;
+    int minus=top-bot, counter=top, topnums[100] , botnums[100], num1=0; long double result=1;
     for (int f = 0; f < 100; f++)   botnums[f]=topnums[f]=1;
     if (bot>minus) counter=bot;
     else  counter=minus;
