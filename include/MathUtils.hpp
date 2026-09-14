@@ -115,6 +115,16 @@ namespace Mathutilus
     return res;
     }
 
+    unsigned long long int bigPow(unsigned long long int base ,int power) //prevent pow(x,y) function's decimal point error
+{
+    unsigned long long int temp=1;
+    for (size_t i = 0; i < power; i++)
+    {
+        temp*=base;
+    }
+    return temp;
+}
+
     inline string PowofString(const string &num, int PowNum) // Multiplies a large number (represented as a string) by an integer
     {
         string result = "";
@@ -147,6 +157,20 @@ namespace Mathutilus
         if(carry>0) result+= to_string(carry);
         std::reverse(result.begin(), result.end()); 
         return result;    
+    }
+
+    inline string hexadecimalConvergence(long long int a)
+    {
+        char hexLookup[16] = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'};
+        int temp;
+        string num;
+        while (a>=1)
+        {
+            temp= a%16; a/=16;
+            num+=hexLookup[temp];
+        }
+        std::reverse(num.begin(), num.end());
+        return num;
     }
 }
 
