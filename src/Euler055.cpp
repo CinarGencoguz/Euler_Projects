@@ -7,42 +7,29 @@
 #include <math.h>
 #include <string>
 #include <algorithm>
+#include "../include/MathUtils.hpp"
 using namespace std;
-int counter,result=0;
-string temp1,temp2,temp4;
-int carry ,temp3,temp5;
 
-bool IsPalindromString(string s) // Checks if a string reads the same forward and backward
-{
-    int left,right;
-    left=0,right=s.size()-1;
-    while (left<right)
-    {
-        if (s[left]!=s[right])
-            return false;
-        left++;right--;
-    }
-    return true;
-}
+int counter,result=0;
+string num1 ,num2,strTemp1;
+
 int main()
 {
-    for (size_t i = 1; i < 10000; i++)
+    for (int i = 1; i < 10000; i++)
     {
-        counter=0; temp1.to_string(i); temp2=temp1;
-        std::reverse(temp2.begin(), temp2.end());
-        while (true)
-        {
-            temp4=""; carry=0;
-            for (size_t t = temp1.size()-1; t >=0 ; t++)
-            {
-                temp3 =(temp1[i] - '0') * 10 + (temp2[i] - '0') + carry;
-                carry = (temp3+carry)/10;  temp5=(temp3+carry)%10;
-                temp4+=(temp3+'0');
-            }
-            temp1=temp4; std::reverse(temp4.begin(), temp4.end());
-            if (counter==50)    { result++;  break; cout <<i<<endl; }
-            temp2=temp1; std::reverse(temp2.begin(), temp2.end());
-        }
+        num1=to_string(i); strTemp1=num1; counter =0;//converts integer to string prevent overflow 
+        std::reverse(strTemp1.begin(), strTemp1.end());//reverses the number1 and store as number 2
+        num2=strTemp1;
+       while (true)
+       {
+            num1 =strTemp1= Mathutilus::addString(num1,num2); // adding to string which stores integer
+            if(Mathutilus::IsPalindromString(num1)) break; // checks is it palindrom or not
+            std::reverse(strTemp1.begin(), strTemp1.end());
+            num2= strTemp1;
+            counter++;
+            if(counter==50) { result++; break;}
+       }
+       
     }
     cout << result;
 }

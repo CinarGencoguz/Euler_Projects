@@ -134,6 +134,20 @@ namespace Mathutilus
         return result;
     }
 
+    inline string addString(string a, string b) // add 2 string which is holding integers  WARNİNG string a is the largest number as digit
+    {
+        int temp1, carry=0, diff;
+        string result; diff = a.size()- b.size(); // diff prevent adding wrong digits
+        for (int i = a.size()-1; i >= 0; i--) // starts adding at right and end of the loop reverses the number
+        {
+            temp1= (a[i]- '0') +  ((i - diff >= 0) ? (b[i - diff] - '0') : 0) + carry;
+            carry= temp1 /10; temp1%= 10;
+            result += to_string(temp1);
+        }
+        if(carry>0) result+= to_string(carry);
+        std::reverse(result.begin(), result.end()); 
+        return result;    
+    }
 }
 
     
