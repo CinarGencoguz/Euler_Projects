@@ -14,6 +14,6 @@ int main()
     {
         if(i%10!=3&&i%10!=7) continue;                   //we need to eliminate other than 3 and 7 because only 3 and 7 have squares ending in 9 
         num=i*i;  numString=to_string(num);              // for checking digits easily , converted to string
-        if (cc[2]=='2'&&cc[4]=='3'&&cc[6]=='4'&&cc[8]=='5'&&cc[10]=='6'&&cc[12]=='7'&&cc[14]=='8')      cout << i*10; break; // those are just brute force
+        if (numString[2]=='2'&&numString[4]=='3'&&numString[6]=='4'&&numString[8]=='5'&&numString[10]=='6'&&numString[12]=='7'&&numString[14]=='8')      cout << i*10; break; // those are just brute force
     }
 }

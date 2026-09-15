@@ -8,7 +8,7 @@ int total,temp,result;
 
 int main()
 {
-    num2=0;result=0;
+    result=0;
     for (int i = 100; i < 1000000; i++) //I ketp between 100 and 1000000 because of 6* 9^5 = 354294 that means it can not have more than 6 digit
     {
         total=0;temp=i;

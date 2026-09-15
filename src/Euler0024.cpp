@@ -11,7 +11,7 @@ int Result[10];
 int total,  digits, Millionth;
 int main()
 {
-	digits = 9; Millionth = 1000000; total = Mathutilus::Factoriel(9); 
+	digits = 9; Millionth = 1000000; total = Mathutilus::Factorial(9); 
 	while (digits!=0)
 	{	
 		for (int i = 0; i <= digits+1; i++)//program finds digits by checking permutation

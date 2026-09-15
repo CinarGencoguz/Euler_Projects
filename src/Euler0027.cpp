@@ -21,6 +21,7 @@ int main()
 	for ( b = 0; b <primeCounter; b++)
 	{
 		for (a = -999; a < 1000; a+=2) // Increments 'a' by 2 because for odd 'b', 'a' must be odd to keep the sum odd for n=1
+		{	
 			n = 0;
 			if (a<0)
 			{

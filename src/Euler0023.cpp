@@ -14,7 +14,7 @@ set<int> sums;
 
 int main()
 {
-	for (size_t i = 0; i <= limit; i++)	if (Mathutilus::Isabundant(i)) {abundantNums[abundantCounter]=i, abundantCounter++;}//stores abundant numbers in an array
+	for (size_t i = 0; i <= limit; i++)	if (Mathutilus::IsAbundant(i)) {abundantNums[abundantCounter]=i, abundantCounter++;}//stores abundant numbers in an array
 	for (size_t i = 0; i < abundantCounter; i++)
 	{
 		for (size_t k = i; k < abundantCounter; k++)//stores different abundant number in a set

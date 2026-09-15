@@ -9,7 +9,7 @@
 using namespace std;
 unsigned long long int result=0,num=50;
 unsigned long long int temp1,temp2,split1,split2,numSquare;
-unsigned long long int digitsq,digitsquareH,digitsquareL;
+unsigned long long int digitsq,digitSquareH,digitSquareL;
 int digit,digitL,digitH;
 bool IsDigitEven(unsigned long long int a,int& n) // checking number of digit is even or not
 {
@@ -31,12 +31,12 @@ int main()
         if(!IsDigitEven(num*num,digit))  // if it is not even we split as x -- x+1 or x+1 -- x 
         {
             digitH=(digit+1)/2; digitL=digitH-1;  //digitH split it as x -- x+1 , digitL split it as x+1 -- x
-            digitsquareH=pow(10,digitH);digitsquareL=pow(10,digitL);
-            split2=numSquare%digitsquareH; split1=numSquare/digitSquareH;  
-            temp2=numSquare%digitsquareL; temp1=numSquare/digitSquareL;         
+            digitSquareH=pow(10,digitH);digitSquareL=pow(10,digitL);
+            split2=numSquare%digitSquareH; split1=numSquare/digitSquareH;  
+            temp2=numSquare%digitSquareL; temp1=numSquare/digitSquareL;         
         }
         else    {split2=numSquare%digitsq; split1=numSquare/digitsq;} //If the digit count is even, split the number equally and execute the checking procedure
-        if(split2<digitsquareH/10) {num++ ;continue;}
+        if(split2<digitSquareH/10) {num++ ;continue;}
         if(num==split1+split2||num==temp2+temp1)
         {
             result+=numSquare;

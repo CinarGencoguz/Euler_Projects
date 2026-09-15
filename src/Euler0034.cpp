@@ -16,7 +16,7 @@ int main()
         while (temp>=1)
         {
             digit=temp%10;
-            total+=Mathutils:Factoriel(digit);
+            total+=Mathutilus::Factorial(digit);
             temp/=10;
         }
         if (total==i)   result+=i;

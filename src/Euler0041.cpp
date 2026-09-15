@@ -5,6 +5,7 @@
 #include <math.h>
 #include <algorithm>
 #include <string>
+#include "../include/MathUtils.hpp"
 using namespace std;
 int nums[10]={1,2,3,4,5,6,7,8};
 long int result=0,temp;

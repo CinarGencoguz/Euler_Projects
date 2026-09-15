@@ -16,7 +16,7 @@ int main()
 {
     for (size_t i = 2; i <= 3000; i++) //finds prime numbers
     {
-        if (Mathutils::IsPrime(i)) 
+        if (Mathutilus::IsPrime(i)) 
         {
             prime[primeCounter]=i;
             primeCounter++;

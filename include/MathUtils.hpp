@@ -4,6 +4,8 @@
 #include <math.h>
 #include <string>
 #include <iostream>
+#include <set>
+#include <algorithm>
 using namespace std;
 
 namespace Mathutilus
@@ -83,7 +85,7 @@ namespace Mathutilus
     
     inline bool IsAbundant(int a) //checks the number if it is abundant or not
     {
-        sum=0;
+        int sum=0;
         for (size_t i = 1; i < a/2+1; i++)
         {
             if(a%i==0) sum+=i;
@@ -92,7 +94,7 @@ namespace Mathutilus
         return false;
     }
 
-    inline int Factoriel(int a)
+    inline int Factorial(int a)
     {
        int temp=1;
         if (a<0)  return 0;
@@ -101,7 +103,7 @@ namespace Mathutilus
         return temp;
     }
 
-    inline long long int modPow(long long int base, unsigned long long int pow) // power simplify function
+    inline long long int modPow(long long int base, unsigned long long int pow,long int mod) // power simplify function
     {
     long long int res = 1;
     base %= mod; 
@@ -115,7 +117,7 @@ namespace Mathutilus
     return res;
     }
 
-    unsigned long long int bigPow(unsigned long long int base ,int power) //prevent pow(x,y) function's decimal point error
+    inline unsigned long long int bigPow(unsigned long long int base ,int power) //prevent pow(x,y) function's decimal point error
 {
     unsigned long long int temp=1;
     for (size_t i = 0; i < power; i++)

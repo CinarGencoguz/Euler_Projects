@@ -16,6 +16,6 @@ int main()
     {
         sum=(counter*counter+counter)/2; //triangle rule x=(n^2+n)/2
         if (Mathutilus::isHexagon(sum)&&Mathutilus::isPentagon(sum))    {cout <<sum;    break;}
-        i++;
+        counter++;
     }
 }

@@ -27,7 +27,7 @@ int main()
             temp2=0;
             while(temp1>=1)// Compute the sum of factorials of each digit for the current number
             {
-                temp2+=Mathutilus::Factoriel(temp1%10);
+                temp2+=Mathutilus::Factorial(temp1%10);
                 temp1/=10;
             }
             temp1=temp2;

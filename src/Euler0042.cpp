@@ -38,7 +38,7 @@ int main()
                 }
             }
         }
-        if (Mathutilus::isTriangle(g))  result++;   
+        if (Mathutilus::isTriangle(temp1))  result++;   
     }
     cout << result;
 }

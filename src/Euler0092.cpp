@@ -22,9 +22,7 @@ int main()
             {
                 a=number/pow(10,k); a=a%10;
                 temp2+=a*a;
-                cout << a < "_";
             } 
-            cout << endl;
             if (temp2==1)   { result--; break;}
             number=temp2;
         }
