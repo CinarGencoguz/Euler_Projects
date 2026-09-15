@@ -14,13 +14,83 @@ namespace Mathutilus
         if(a == 2 || a == 3 ) return true;      
         if(a % 2 == 0 || a % 3 == 0) return false;      //eliminate number can divided by 2 and 3
         if((a+1) % 6 != 0 && (a-1) % 6 != 0) return false;      //a prime number must be form in 6k+1 or 6k-1 beside 2 and 3
-        for (size_t i = 3; i <= sqrt(a)+1; i+=2)        //if a number doesn't have a divider less than sqrt of it plus one mathematically it can't have one
+        for (size_t i = 5; i <= sqrt(a)+1; i+=2)        //if a number doesn't have a divider less than sqrt of it plus one mathematically it can't have one
         {                                               // because of that our threshold is sqrt of number plus 1
             if (a%i==0) return false;
         }
         return true;
     }
 
+    inline bool IsPalindromString(string s) // Checks if a string reads the same forward and backward
+    {
+        int left,right;
+        left=0,right=s.size()-1;
+        while (left<right)
+        {
+            if (s[left]!=s[right])
+                return false;
+            left++;right--;
+        }
+        return true;
+    }
+ 
+    inline bool IsPalindromInt(unsigned long long int a,int digit) // Checks if a int reads the same forward and backward
+    {
+        string x =to_string(a);
+        for (int i = 0; i < digit/2; i++)
+        {
+            if (x[i]!=x[digit-(i)])   return false;
+        }
+        return true;
+    }
+
+    inline bool IsPandigital(int a)// checks if the number has all different digit except 0
+    {
+        set<int> nums;
+        while (a>=1)
+        {
+            nums.insert(a%10);
+            if (a%10==0&&nums.size()!=9)    return false;
+            a/=10;
+        }
+        if (nums.size()!=9)     return false;
+        return true;
+    }
+
+    inline bool isPentagon(long long x)  //checks if the number satisfy Pentagon rule
+    {
+        // (3n^2-n)/2=x  1+24x pentagon rule
+        long long s = 1 + 24*x;
+        long long root = (long long)(sqrt(s) + 0.5);
+        return root*root == s && (1 + root) % 6 == 0; // checks root is integer or not using the quadratic Root Finding
+    }
+
+    inline bool isHexagon(long long x)  //checks if the number satisfy Hexagon rule
+    {
+        // (2n^2-n)=x   1+8x  hexagon rule
+        long long s = 1 + 8*x;
+        long long root = (long long)(sqrt(s) + 0.5);
+        return root*root == s && (1 + root) % 4 == 0; // checks root is integer or not using the quadratic Root Finding
+    }
+
+    inline bool isTriangle(long long x) //checks if the number satisfy Triangle rule
+    {
+        // (n^2+n)/2=x   1+8x   triangle rule
+        long long s = 1 + 8*x;
+        long long root = (long long)(sqrt(s) + 0.5);
+        return root*root == s; // checks root is integer or not using the quadratic Root Finding
+    }
+    
+    inline bool IsAbundant(int a) //checks the number if it is abundant or not
+    {
+        sum=0;
+        for (size_t i = 1; i < a/2+1; i++)
+        {
+            if(a%i==0) sum+=i;
+            if(sum>a) return true;
+        }
+        return false;
+    }
 
     inline int Factoriel(int a)
     {
@@ -31,22 +101,78 @@ namespace Mathutilus
         return temp;
     }
 
-    bool IsPalindromString(string s) // Checks if a string reads the same forward and backward
-{
-    int left,right;
-    left=0,right=s.size()-1;
-    while (left<right)
+    inline long long int modPow(long long int base, unsigned long long int pow) // power simplify function
     {
-        if (s[left]!=s[right])
-            return false;
-        left++;right--;
+    long long int res = 1;
+    base %= mod; 
+    while (pow > 0)  // get  it's power 1 time and process modulus which prevents overflow
+    {
+        if (pow % 2 == 1)          
+        res = (res * base) % mod; 
+        base = (base * base) % mod;   
+        pow = pow / 2;              
     }
-    return true;
+    return res;
+    }
+
+    unsigned long long int bigPow(unsigned long long int base ,int power) //prevent pow(x,y) function's decimal point error
+{
+    unsigned long long int temp=1;
+    for (size_t i = 0; i < power; i++)
+    {
+        temp*=base;
+    }
+    return temp;
 }
 
+    inline string PowofString(const string &num, int PowNum) // Multiplies a large number (represented as a string) by an integer
+    {
+        string result = "";
+        int carry = 0;int prod;
+        for (int i = num.size() - 1; i >= 0; i--)  // Process digits from right to left
+        {
+            prod = (num[i] - '0') * PowNum + carry; //Converts character to integer
+            carry = prod / 10;                      //Converts character to integer
+            prod %= 10;                             //keep single digit
+            result = char(prod + '0') + result;     // Prepends digit to the result string
+        }
+        while (carry > 0) 
+        {
+            result = char(carry % 10 + '0') + result;
+            carry /= 10;
+        }
+        return result;
+    }
 
+    inline string addString(string a, string b) // add 2 string which is holding integers  WARNİNG string a is the largest number as digit
+    {
+        int temp1, carry=0, diff;
+        string result; diff = a.size()- b.size(); // diff prevent adding wrong digits
+        for (int i = a.size()-1; i >= 0; i--) // starts adding at right and end of the loop reverses the number
+        {
+            temp1= (a[i]- '0') +  ((i - diff >= 0) ? (b[i - diff] - '0') : 0) + carry;
+            carry= temp1 /10; temp1%= 10;
+            result += to_string(temp1);
+        }
+        if(carry>0) result+= to_string(carry);
+        std::reverse(result.begin(), result.end()); 
+        return result;    
+    }
+
+    inline string hexadecimalConvergence(long long int a)
+    {
+        char hexLookup[16] = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'};
+        int temp;
+        string num;
+        while (a>=1)
+        {
+            temp= a%16; a/=16;
+            num+=hexLookup[temp];
+        }
+        std::reverse(num.begin(), num.end());
+        return num;
+    }
 }
 
-
-
+    
 #endif // MATH_UTILS_HPP+
