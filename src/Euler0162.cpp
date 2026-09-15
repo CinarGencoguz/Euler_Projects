@@ -1,3 +1,20 @@
+// OBJECTIVE
+// In the hexadecimal number system numbers are represented using 16 different digits:
+// 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, A, B, C, D, E, F
+// 
+// The hexadecimal number AF when written in the decimal number system equals 10 × 16 + 15 = 175.
+// 
+// In the hexadecimal writing of numbers, we consider the digits 0, 1, and A.
+// We are interested in hexadecimal numbers, for which the digits 0, 1, and A all appear at least once.
+// Note that a valid number cannot start with the digit 0.
+// 
+// For example:
+// - 10A is a valid hexadecimal number of length 3.
+// - 1A0 is also valid.
+// - 01A is not valid because it starts with 0.
+// 
+// How many hexadecimal numbers of length at most 16 (i.e. length 3 to 16) contain at least one 0, at least one 1, and at least one A?
+// Give your answer as a hexadecimal string.
 #include <iostream>
 #include <string>
 #include <math.h>
