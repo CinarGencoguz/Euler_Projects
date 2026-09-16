@@ -41,12 +41,12 @@ Euler_Projects/
 ├── include/
 │   └── MathUtils.hpp  # Reusable mathematical & algorithmic utilities
 ├── src/
-│   ├── Euler001.cpp   # Individual problem solutions (Euler001 - Euler932)
-│   ├── Euler002.cpp
+│   ├── Euler0001.cpp   # Individual problem solutions 
+│   ├── Euler0002.cpp
 │   └── ...
 └── data/
-    ├── 022_names.txt  # Problem-specific input data files
-    └── 042_words.txt
+    ├── 0022_names.txt  # Problem-specific input data files
+    └── 0042_words.txt
 
 ---
 
