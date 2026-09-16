@@ -160,22 +160,21 @@ namespace Mathutilus
         std::reverse(result.begin(), result.end()); 
         return result;    
     }
-
-    string multiplyString(string a,int b) // multiply string which is holding integer by decleared number
-{
-    int temp1, carry=0; string result,temp;
-    for (int i = a.size()-1; i >= 0; i--) // starts multiply at right and end of the loop reverses the number
+    
+    inline string multiplyString(string a,int b) // multiply string which is holding integer by decleared number
     {
-        temp1= (a[i]- '0') *b  + carry;
-        carry= temp1 /10; temp1%= 10;
-        result += to_string(temp1);
-    }
-    temp=to_string(carry);
-    std::reverse(temp.begin(), temp.end()); //reverses the carry because if carry has more than 1 digit it's needed to reversed otherwise number will be wrong
-    result+= temp;
-    std::reverse(result.begin(), result.end()); 
-    return result;
-}
+        int temp1, carry=0; string result,temp;
+        for (int i = a.size()-1; i >= 0; i--) // starts multiply at right and end of the loop reverses the number
+        {
+            temp1= (a[i]- '0') *b  + carry;
+            carry= temp1 /10; temp1%= 10;
+            result += to_string(temp1);
+        }
+        temp=to_string(carry);
+        std::reverse(temp.begin(), temp.end()); //reverses the carry because if carry has more than 1 digit it's needed to reversed otherwise number will be wrong
+        result+= temp;
+        std::reverse(result.begin(), result.end());
+    } 
 
     inline string hexadecimalConvergence(long long int a)
     {
